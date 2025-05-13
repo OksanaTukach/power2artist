@@ -1,0 +1,108 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Модерация аукциона';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1= title
+        .request 
+            .container 
+                .form-container
+                    .val-items
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Общие сведения
+                            .form-group-items
+                                +formVal('Категория', 'Выступление') 
+                                +formVal('Тип', 'Сольник') 
+                        .border 
+                        .form-group(data-aos="fade-down")
+                            .form-group-items
+                                +formValRadio('Несколько концертов') 
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Сведения о концерте (
+                                span.blue 1
+                                |)
+                            .form-group-items
+                                +formValDate('Дата', '14.08.2020') 
+                                +formVal('Страна', 'Беларусь') 
+                                +formVal('Город', 'Гомель') 
+                                +formVal100Text('Дополнительная информация о концерте', 'Введите дополнительную информацию о концерте')
+                        .border
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Сведения о концерте (
+                                span.blue 2
+                                |)
+                            .form-group-items
+                                +formValDate('Дата', '14.08.2020') 
+                                +formVal('Страна', 'Беларусь') 
+                                +formVal('Город', 'Гомель') 
+                                +formVal100Text('Дополнительная информация о концерте', 'Введите дополнительную информацию о концерте')
+                        .border
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Сведения о начальной цене
+                            .form-group-items
+                                +formVal('Начальная цена лота', '100') 
+                                +formVal('Валюта торгов', 'USD') 
+                                +formVal('Вид шага торгов', 'В процентах') 
+                                +formVal('Шаг лота', '5%') 
+                        .border
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Порядок проведения аукциона
+                            .form-group-items
+                                +formValDate('Дата начала аукциона', '14.08.2020') 
+                                +formValTime('Время окончания приема заявок', '21:00') 
+                                +formValTime('Время начала торгов', '19:00') 
+                                +formValTime('Время окончания торгов', '23.00') 
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Контактные данные директора
+                            .form-group-items
+                                +formVal('ФИО', 'Иванов Иван Иванович') 
+                                +formVal('Телефон', '+375 (25) 600-35-40') 
+                                +formVal('Email', '123@mail.ru') 
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Контактные данные менеджера
+                            .form-group-items
+                                +formVal('ФИО', 'Иванов Иван Иванович') 
+                                +formVal('Телефон', '+375 (25) 600-35-40') 
+                                +formVal('Email', '123@mail.ru') 
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Контактные данные тур-менеджера
+                            .form-group-items
+                                +formVal('ФИО', 'Иванов Иван Иванович') 
+                                +formVal('Телефон', '+375 (25) 600-35-40') 
+                                +formVal('Email', '123@mail.ru') 
+                        .border
+                        .row
+                            .documents(data-aos="fade-down")
+                                .documents-zag Прикрепленные документы
+                                .documents-items
+                                    +icon('download')
+                                    .documents-list
+                                        a(href="#") Устав.pdf
+                                        a(href="#") Приказ на директора.pdf
+                                        a(href="#") Свидетельство.jpg 
+                        .row
+                            +btnBlue('Принять заявку')
+                            +btnBorder('Отклонить заявку')
+
+
+
+
+
+                    

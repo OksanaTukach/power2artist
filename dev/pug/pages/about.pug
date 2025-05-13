@@ -1,0 +1,61 @@
+extends ../layout/main
+
+block variables
+    - var title = 'О проекте';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp.__center
+                    include ../modules/breadcrumbs
+                    h1= title
+                    span 
+                        span.blue Power2Artists -  
+                        |&#8194;Площадка для организации концертов и мероприятий. Платформа рассчитана на то, чтобы пользователи максимально быстро и выгодно удовлетворяли свои запросы и потребности
+        .container
+            .about
+                .about-container
+                    .about-items 
+                        .about-item
+                            .about-item__desc(data-aos="fade-right")
+                                .zag Регистрация
+                                .desc Выбери категорию (Артист, Компания, Персонал) и 
+                                    a(href="#") Зарегистрируйся
+                            .about-item__img(data-aos="fade-left")
+                                img(src="./img/content/about-1.png")
+                        .about-item
+                            .about-item__desc(data-aos="fade-right")
+                                .zag Профиль
+                                .desc Заполни профиль и выбери услуги, которые тебе интересны
+                            .about-item__img(data-aos="fade-left")
+                                img(src="./img/content/about-2.png")
+                        .about-item
+                            .about-item__desc(data-aos="fade-right") 
+                                .zag Аукционы
+                                .desc Ты можешь организовать свой аукцион либо принять участие в аукционах других пользователей
+                            .about-item__img(data-aos="fade-left")
+                                img(src="./img/content/about-3.png")
+                        .about-item
+                            .about-item__desc(data-aos="fade-right") 
+                                .zag Сотрудничество
+                                .desc Отправляй заявку с предложением  любому пользователю, а также принимай или отклоняй предложения от других пользователей
+                            .about-item__img(data-aos="fade-left")
+                                img(src="./img/content/about-4.png")
+                        .about-item
+                            .about-item__desc(data-aos="fade-right")
+                                .zag Сделки
+                                .desc Заключай сделки по всему миру на самых выгодных условиях
+                            .about-item__img(data-aos="fade-left")
+                                img(src="./img/content/about-5.png")

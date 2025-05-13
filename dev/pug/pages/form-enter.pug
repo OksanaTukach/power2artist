@@ -1,0 +1,10 @@
+include ../mixins
+.form-popup.form-enter
+    .form-popup--wrp
+        .form-popup--content
+            form
+                .form-popup--zag
+                    span Войти 
+                +inputEmailReq('Введите Ваш Email', 'Например: Beyonce@gmail.com')
+                +inputPasswordReq('Введите Ваш пароль')
+                +btnBlue('Войти')

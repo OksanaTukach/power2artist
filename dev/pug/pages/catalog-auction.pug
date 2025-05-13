@@ -1,0 +1,199 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Каталог аукционов';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./js/fv.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1= title
+        .catalog 
+            .container 
+                form.filter
+                    +selectDoc('Направление', 'Артист') 
+                    +select('Категория', 'Выступление') 
+                    +select('Тип', 'Тур') 
+                    +inputDate('Дата начала аукциона')
+                    +select('Регион', 'Минская область') 
+                    +select('Страна', 'Беларусь') 
+                    +select('Город', 'Минск') 
+                    +inputPrice('Цена')
+                    a(href="#").clear-filter Очистить фильтр
+                    .card-auctions__items
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions1.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions2.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions3.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions1.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions2.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions3.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions2.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions3.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions3.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                include ../modules/pagination

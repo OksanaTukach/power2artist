@@ -1,0 +1,30 @@
+extends ../layout/main
+
+block variables
+	- var title = '404';
+
+block libs-css
+	link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+
+block libs-js
+	script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+
+
+block content
+	include ../modules/header
+	include ../modules/sidebar
+	main
+		.page-head
+			.container
+				.page-head__wrp
+					include ../modules/breadcrumbs
+					h1= title
+		.page404
+			.page404__content
+				.h1 404
+				.h2 Такой страницы не существует
+				p К сожалению данная страница удалена. Вы можете вернуться на главную страницу и продолжить поиск информации
+				a.btn.btn-blue(href='./')
+					span Вернуться на главную
+
+

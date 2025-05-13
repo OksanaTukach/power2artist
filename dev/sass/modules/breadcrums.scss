@@ -1,0 +1,42 @@
+.breadcrumbs{
+	font-size: toVw(14);
+	color: $blue;
+	margin-bottom: toVw(5);
+	padding: toVw(30) 0;
+	span{
+		color: #424242;
+		opacity: 0.6;
+		@include sm-block(){
+			white-space: nowrap;
+			padding-bottom: toVw(5);
+		}
+	}
+	a{
+		transition: .3s;
+		span{
+			font-size: toVw(14);
+			line-height: 120%;
+			color: $blue;
+			position: relative;
+			padding-right: 20px;
+			&::before{
+				content: url(../img/svg/arrow-drop.svg);
+				transform: rotate(-90deg);
+				position: absolute;
+				box-sizing: border-box;
+				right: toVw(5);
+				top: toVw(1);
+			}
+		}
+		&:hover{
+			opacity: 0.5;
+		}
+	}
+}
+.bx-breadcrumb{
+	display: flex;
+	@include sm-block(){
+		overflow: auto;
+	}
+
+}

@@ -1,0 +1,353 @@
+.fv
+	form(action="")
+		.fv__heading
+			| Форма валидации
+		.fv__error Ошибка
+		.fv__block.required--input.required
+			label
+				span Текстовое поле ввода
+					|:
+				input(type='text' data-length='7')
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.required--input.num--inset.required
+			label
+				span Цифровое поле ввода
+				| :
+				input(type='text' data-length='1')
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.required--password.required
+			.password-first
+				label
+					span Введите пароль:
+					| :
+					input(type='password' required minlength="4" maxlength="8")
+					.password-control
+				.fv__block-error Поле заполнено некорректно!
+				.fv__block-succes Поле заполнено корректно!
+				.fv__block-not-equally Пароли не совпадают!
+			.password-second(style="display: none;")
+				label
+					span Повторите пароль:
+					| :
+					input(type='password' required minlength="4" maxlength="8")
+					.password-control
+				.fv__block-error Поле заполнено некорректно!
+				.fv__block-succes Поле заполнено корректно!
+				.fv__block-not-equally Пароли не совпадают!
+
+		.fv__block.input--mask.required--date.required
+			label
+				span Цифровое поле ввода (дата рождения)
+				| :
+				input(type='text' class='date-picker' data-mask="99.99.9999" data-lang="ru" data-src='./img/svg/post.svg' data-template='dd.mm.yy')
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.input--mask.required--date.required
+			label
+				span Цифровое поле ввода (дата рождения)
+				| :
+				input(type='text' class='date-picker' data-mask="99.99.9999" data-lang="ru" data-src='./img/svg/post.svg' data-template='dd.mm.yy')
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.input--mask.required
+			label
+				span Цифровое поле ввода (телефон)
+				| :
+				input(type='tel' data-mask='+375 (99) 999-99-99' data-placeholder='+375 (__) ___-__-__' placeholder='+375 (__) ___-__-__')
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.input--mask
+			label Телефон
+				div.input-country
+					select.styler
+						option(data-mask='+375 (99) 999-99-99' value='+375 (99) 999-99-99' data-placeholder='+375 (__) ___-__-__' data-img="./img/svg/belarus.svg") +375
+						option(data-mask='+7 (999) 999-99-99' value='+7 (999) 999-99-99' data-placeholder='+7 (___) ___-__-__' data-img="./img/svg/russia.svg") +7
+					input(type='tel' data-mask='+375 (99) 999-99-99' data-placeholder='+375 (__) ___-__-__' placeholder='+375 (__) ___-__-__')
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.required--email.required
+			label
+				span Текстовое поле ввода (email)
+				| :
+				input(type='email')
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.email-input-control
+			label
+				span Текстовое поле ввода (email, динамический 'required')
+				| :
+				input(type='email')
+			.fv__block-succes Поле заполнено корректно!
+			
+		.fv__block.radio--required
+			span Группа раидокнопок:
+			label
+				input(type="radio" name="radio1").styler
+				span Радиокнопка
+			label
+				input(type="radio" name="radio1").styler
+				span Радиокнопка
+			label
+				input(type="radio" name="radio1").styler
+				span Радиокнопка
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.required--check
+			span Группа одиночных чекбоксов:
+			label
+				input(type="checkbox").styler
+				span Одиночный чекбокс
+			label
+				input(type="checkbox").styler
+				span Одиночный чекбокс
+			label
+				input(type="checkbox").styler
+				span Одиночный чекбокс
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.required.required--select
+			label
+				span Выпадающий список:
+				br
+				select.styler
+					option(disabled selected value="Not selected") Не выбрано
+					option(value="1") Опция 1
+					option(value="2") Опция 2
+					option(value="3") Опция 3
+					option(value="4") Опция 4
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.check-more
+			span Группа чекбоксов:
+			label
+				input(type="checkbox").styler
+				span Групповой чекбокс
+			label
+				input(type="checkbox").styler
+				span Групповой чекбокс
+			label
+				input(type="checkbox").styler
+				span Групповой чекбокс
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.required--textarea
+			label
+				span Поле для ввода текста
+				br
+				textarea(name="" cols="30" rows="10")
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.required--file.required
+			label
+				span Прикрепить файл (один)
+				| :
+				br
+				input(type="file").styler
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+			
+		.fv__block.required--file--multiple.required(data-max="5")
+			label
+				span Прикрепить файл (несколько)
+				| :
+				br
+				input(type="file" data-number="" data-placeholder="Выберите файл" multiple).styler
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+			.input-file-list
+
+		.fv__block.fv__block-sbmt.required
+			input(type='submit' value='Отправить' class='required--sbmt')
+
+.fv__block-popup
+	a(href="form-validate-ajax.html" class="js-ajax-popup") Открыть ajax-popup-форму
+	a(href="#js-inline-popup" class="js-inline-popup") Открыть inline-popup-форму
+
+.fv.form-validate-ajax.mfp-hide#js-inline-popup
+	form(action="" name="")
+		.fv__heading
+			| Валидация popup-inline формы
+		.fv__error Ошибка
+		.fv__block.required--input.required
+			label
+				span Текстовое поле ввода
+					|:
+				input(type='text' data-length='7')
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.required--input.num--inset.required
+			label
+				span Цифровое поле ввода
+				| :
+				input(type='text' data-length='1')
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.required--password.required
+			.password-first
+				label
+					span Введите пароль:
+					| :
+					input(type='password' required minlength="4" maxlength="8")
+					.password-control
+				.fv__block-error Поле заполнено некорректно!
+				.fv__block-succes Поле заполнено корректно!
+				.fv__block-not-equally Пароли не совпадают!
+			.password-second(style="display: none;")
+				label
+					span Повторите пароль:
+					| :
+					input(type='password' required minlength="4" maxlength="8")
+					.password-control
+				.fv__block-error Поле заполнено некорректно!
+				.fv__block-succes Поле заполнено корректно!
+				.fv__block-not-equally Пароли не совпадают!
+
+		.fv__block.input--mask.required--date.required
+			label
+				span Цифровое поле ввода (дата рождения)
+				| :
+				input(type='text' class='date-picker' data-mask="99.99.9999" data-lang="ru" data-src='./img/svg/post.svg' data-template='dd.mm.yy')
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.input--mask.required--date.required
+			label
+				span Цифровое поле ввода (дата рождения)
+				| :
+				input(type='text' class='date-picker' data-mask="99.99.9999" data-lang="ru" data-src='./img/svg/post.svg' data-template='dd.mm.yy')
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.input--mask.required
+			label
+				span Цифровое поле ввода (телефон)
+				| :
+				input(type='tel' data-mask='+375 (99) 999-99-99' data-placeholder='+375 (__) ___-__-__' placeholder='+375 (__) ___-__-__')
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.input--mask
+			label Телефон
+				div.input-country
+					select.styler
+						option(data-mask='+375 (99) 999-99-99' value='+375 (99) 999-99-99' data-placeholder='+375 (__) ___-__-__' data-img="./img/svg/belarus.svg") +375
+						option(data-mask='+7 (999) 999-99-99' value='+7 (999) 999-99-99' data-placeholder='+7 (___) ___-__-__' data-img="./img/svg/russia.svg") +7
+					input(type='tel' data-mask='+375 (99) 999-99-99' data-placeholder='+375 (__) ___-__-__' placeholder='+375 (__) ___-__-__')
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.required--email.required
+			label
+				span Текстовое поле ввода (email)
+				| :
+				input(type='email')
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.email-input-control
+			label
+				span Текстовое поле ввода (email, динамический 'required')
+				| :
+				input(type='email')
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.radio--required
+			span Группа раидокнопок
+			label
+				input(type="radio" name="radio1").styler
+				span Радиокнопка
+			label
+				input(type="radio" name="radio1").styler
+				span Радиокнопка
+			label
+				input(type="radio" name="radio1").styler
+				span Радиокнопка
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.required--check
+			span Группа одиночных чекбоксов:
+			label
+				input(type="checkbox").styler
+				span Одиночный чекбокс
+			label
+				input(type="checkbox").styler
+				span Одиночный чекбокс
+			label
+				input(type="checkbox").styler
+				span Одиночный чекбокс
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.required.required--select
+			label
+				span Выпадающий списк
+				br
+				select.styler
+					option(disabled selected value="Not selected") Не выбрано
+					option(value="1") Опция 1
+					option(value="2") Опция 2
+					option(value="3") Опция 3
+					option(value="4") Опция 4
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.check-more
+			span Группа чекбоксов:
+			label
+				input(type="checkbox").styler
+				span Групповой чекбокс
+			label
+				input(type="checkbox").styler
+				span Групповой чекбокс
+			label
+				input(type="checkbox").styler
+				span Групповой чекбокс
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.required--textarea
+			label
+				span Поле для ввода текста
+				br
+				textarea(name="" cols="30" rows="10")
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.required--file.required
+			label
+				span Прикрепить файл (один)
+				| :
+				br
+				input(type="file").styler
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.required--file--multiple.required(data-max="5")
+			label
+				span Прикрепить файл (несколько)
+				| :
+				br
+				input(type="file" data-number="" data-placeholder="Выберите файл" multiple).styler
+			.input-file-list
+			.fv__block-error Поле заполнено некорректно!
+			.fv__block-succes Поле заполнено корректно!
+
+		.fv__block.fv__block-sbmt.required
+			input(type='submit' value='Отправить' class='required--sbmt')

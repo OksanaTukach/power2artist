@@ -1,0 +1,118 @@
+.auction-gallery{
+	width: 100%;
+    padding-top: toVw(25);
+	@include md-block(){
+		padding-top: toVw(50);
+	}
+	@include xs-block(){
+		width: 100%;
+		order: 2;
+		padding-right: 0;
+	}
+	&__main{
+		margin-bottom: toVw(20);
+		position: relative;
+		&-slide{
+			display: flex !important;
+			a{
+				padding-bottom: 56.5%;
+				width: 100%;
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+		}
+		.slick-arrow{
+			&.slick-disabled{
+				opacity: 0.5;
+			}
+			&::before{
+				content: none;
+			}
+			&::after{
+				content: none;
+			}
+			width: toVw(70);
+			height: 100%;
+			top: 0;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: toVw(15);
+			z-index: 100;
+			transform: none;
+			transition: .2s;
+			&:hover{
+				opacity: 1;
+			}
+		}
+		.slick-prev {
+			left: 0px;
+			background-image: url(../img/svg/ar-left--w.svg);
+		}
+		.slick-next {
+			right: 0px;
+			background-image: url(../img/svg/ar-right--w.svg);
+		}
+
+	}
+	&__nav{
+		display: none;
+		width: calc(100% + 14px);
+		margin-left: toVw(-10);
+		margin-bottom: toVw(15);
+		@include xs-block(){
+			display: none;
+		}
+		&.slick-initialized {
+			display: block;
+		}
+		&-slide{
+			padding: 0 toVw(10);
+			cursor: pointer;
+			.img{
+				padding-bottom: 60%;
+				background-size: cover;
+				background-position: center;
+				position: relative;
+			}
+		}
+		.slick-current.slick-active{
+			.img{
+				border: 1px solid $blue;
+			}
+		}
+	}
+	&__btn{
+		display: flex;
+		justify-content: space-between;
+		@include sm-block(){
+			flex-wrap: wrap;
+		}
+		a{
+			width: calc(50% - 8px);
+			text-align: center;
+			padding: 8px 0;
+			span {
+				@include lg-block() {
+					padding: 0 10px;
+				}
+				@include xxxs-block() {
+					padding: 0;
+				}
+			}
+			@include md-block(){
+				font-size: 13px;
+			}
+			@include sm-block(){
+				width: 100%;
+				margin-bottom: 10px;
+			}
+			@include xs-block(){
+				width: calc(50% - 8px);
+				padding: 5px 0;
+				font-size: 11px;
+			}
+
+		}
+	}
+}

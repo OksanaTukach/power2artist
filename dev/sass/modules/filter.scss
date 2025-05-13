@@ -1,0 +1,76 @@
+.filter {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    .form-item {
+        margin-top: toVw(22);
+        margin-right: toVw(25);
+        width: toVw(320);
+        height: auto;
+        @include sm-block(){
+            width: toVw(310); 
+        }
+        @include xxs-block(){
+            width: 100%; 
+            margin-right: 0;
+        }
+        &.w66 {
+            width: calc((100% - 1.1vw) / 1.5);
+            margin-right: 0;
+            @include sm-block(){
+                width: 100%;
+                margin-right: 0;
+            }
+            @include xxs-block(){
+                margin-right: 0;
+            }
+        }
+        label.zag {
+            height: toVw(10);
+        }
+        input {
+            padding: toVw(12) toVw(10) toVw(12) toVw(22);
+            
+        }
+        .ui-datepicker-trigger {
+            top: toVw(6);
+        }
+        .jq-selectbox {
+            
+            .jq-selectbox__select {
+                padding: toVw(11) toVw(10) toVw(11) toVw(22);
+            }
+            .jq-selectbox__trigger {
+                top: toVw(11);
+            }
+        }
+        &.doc {
+            margin-bottom: toVw(30);
+            a {
+                position: absolute;
+                font-size: toVw(12);
+                color: $blue;
+                border-bottom: 1px dashed $blue;
+                line-height:1.4;
+                margin-top: toVw(3);
+                transition: .3s;
+                &:hover {
+                    border: none;
+                }
+
+            }
+        }
+    }
+    a.clear-filter {
+        width: auto;
+        margin-top: toVw(22);
+        margin-right: toVw(40);
+        font-size: toVw(16);
+        color: $blue;
+        text-decoration: underline;
+        transition: .3s;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

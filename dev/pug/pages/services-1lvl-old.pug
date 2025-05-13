@@ -1,0 +1,46 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Услуги первого уровня';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./js/fv.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1 Маркетинг
+        .services.services--first-lvl
+            .container
+                .services-menu
+                    .services-menu-item.js-dropdown
+                        +dropdown('Рекламное агенство', 'item1')
+                        .services-menu-item__link 
+                            a(href="#") Смотреть список компаний
+                    .services-menu-item.js-dropdown
+                        +dropdown('Реклама на ТВ', 'item1')
+                    .services-menu-item.js-dropdown
+                        +dropdown('Радио', 'item1')
+                    .services-menu-item.js-dropdown
+                        +dropdown('Разработка материалов', 'item1')
+                    .services-menu-item.js-dropdown
+                        +dropdown('Интернет', 'item1')
+                    .services-menu-item.js-dropdown
+                        +dropdown('PR', 'item1')
+                .services-text
+                    .services-text--zag После регистрации Вы сможете получить:
+                    ul
+                        li Анализ рынка – текущая ситуация, спрос и предложения, тренды и т. д.
+                        li Анализ целевой аудитории – ее потребности, «боли», признаки, особенности.
+                        li Анализ конкурентов – цены, ассортимент, определение сильных и слабых сторон, разработка стратегий по «обгону» лидеров рынка.
+                        li Грамотная разработка ценовой политики компании, изучение системы ценообразования.
+                        li Создание и улучшение ассортимента.
+                    +btnWhite('Получить доступ')

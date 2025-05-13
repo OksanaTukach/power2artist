@@ -1,0 +1,229 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Аукцион';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/flipclock.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./libs/flipclock.min.js")
+    script(src="./js/fv.js")
+    script(src="./js/auction-card.js")
+    script(src="./js/timer.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1.favorites Аукцион на концерт Beyonce
+                        button.btn-favorites
+                            +icon('star')
+        .container
+            .card   
+                .card-main(data-aos="fade-right")   
+                    .card-main__lot Лот: 569874
+                    .auction-gallery
+                        .auction-gallery__main.js-gallery__main
+                            .auction-gallery__main-slide
+                                a(href='./img/content/auction.png' style='background-image: url(./img/content/auction.png)')
+                            .auction-gallery__main-slide
+                                a(href='./img/content/auction.png' style='background-image: url(./img/content/auction.png)')
+                            .auction-gallery__main-slide
+                                a(href='./img/content/auction.png' style='background-image: url(./img/content/auction.png)')
+                            .auction-gallery__main-slide
+                                a(href='./img/content/auction.png' style='background-image: url(./img/content/auction.png)')
+                        .auction-gallery__nav.js-gallery__nav
+                            .auction-gallery__nav-slide
+                                .img(style='background-image: url(./img/content/auction2.png)')
+                            .auction-gallery__nav-slide
+                                .img(style='background-image: url(./img/content/auction3.png)')
+                            .auction-gallery__nav-slide
+                                .img(style='background-image: url(./img/content/auction4.png)')
+                            .auction-gallery__nav-slide
+                                .img(style='background-image: url(./img/content/auction.png)')
+                    .card-main__content
+                        .content-zag Основная информация о лоте:
+                        .card-list 
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Описание
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Тип концерта
+                                        .val Корпоративное
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Продавец
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Статус продавца
+                                        .val ОАО
+                                    .card-list__item-content 
+                                        .zag Наименование
+                                        .val Общество с ограниченной ответственностью «БелВЭБ Капитал»
+                                    .card-list__item-content 
+                                        .zag Контакты
+                                        .val +375(29) 311-10-05, +375(29)311-10-05
+                                    .card-list__item-content 
+                                        .zag Адрес
+                                        .val Минская область, Минск, 220036, ул. Карла Либкнехта д.66, пом.21а, ком.1
+                                    .card-list__item-content 
+                                        .zag Почтовый адрес
+                                        .val Минск, ул. Карла Либкнехта д.66, пом.21а, ком.1
+                                    .card-list__item-content 
+                                        .zag Наименование
+                                        .val Общество с ограниченной ответственностью «БелВЭБ Капитал»
+                                    .card-list__item-content 
+                                        .zag Email
+                                        .val radkevich.aliaksandr@vebcapital.by
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Организатор
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Порядок регистрации
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Документы
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-doc 
+                                        .list-doc
+                                            a(href="/" download).documents.w100
+                                                .img 
+                                                    img(src="./img/content/documents.png")
+                                                .name    
+                                                    span.blue Документ
+                                                    span 16.08.2020, pdf, 15 кб
+                                            a(href="/" download).documents.w100
+                                                .img 
+                                                    img(src="./img/content/documents.png")
+                                                .name    
+                                                    span.blue Документ
+                                                    span 16.08.2020, pdf, 15 кб
+                .card-info.__auction(data-aos="fade-left")   
+                    .card-info__top 
+                        .card-info__count
+                            +icon('card-info-count')
+                            span
+                                b Количество участников: 
+                                |  20
+                        .card-info__rules
+                            a(href="/" download).documents
+                                +icon('card-info-doc')
+                                span Общие правила аукциона
+                    .card-info__item.border-blue.__timer
+                        .zag До конца приема заявок:
+                        .card-info__timer.js-timer(data-finish='2021-05-25 10:20:15')
+                            .timer_section.js-timer_section(data-type='days')
+                                .num.days_1.js-days_1 0
+                                .num.days_2.js-days_2 0
+                                .timer_section_desc &dcy;&ncy;&iecy;&jcy;
+                            .timer_section.js-timer_section(data-type='hours')
+                                .num.hours_1.js-hours_1 0
+                                .num.hours_2.js-hours_2 0
+                                .timer_section_desc &chcy;&acy;&scy;&ocy;&vcy;
+                            .timer_section.js-timer_section(data-type='minutes')
+                                .num.minutes_1.js-minutes_1 0
+                                .num.minutes_2.js-minutes_2 0
+                                .timer_section_desc &mcy;&icy;&ncy;&ucy;&tcy;
+                            .timer_section.js-timer_section(data-type='seconds')
+                                .num.seconds_1.js-seconds_1 0
+                                .num.seconds_2.js-seconds_2 0
+                                .timer_section_desc &scy;&iecy;&kcy;&ucy;&ncy;&dcy;
+                    .card-info__item 
+                        .info-list 
+                            b Адрес: 
+                            |Витебская обл., г. Орша, ул. Мира, д. 30
+                        .info-list 
+                            b Продавец: 
+                            |Общество с ограниченной ответственностью «Продакш Медиа»
+                        .info-list
+                            b Организатор: 
+                            |Beyonce
+                    .card-info__item.item__auction
+                        .zag Начальная стоимость:
+                        .price-end 700$ 
+                            span.type с учетом НДС
+                        .gray Следующая минимальная ставка  - 710$
+                        .step Шаг аукциона: 
+                            b 10$ от текущей цены
+                            .gray Сумма увеличения текущей цены
+                        .bg 
+                            .step Сумма задатка: 
+                                b 100$
+                                .gray Для участия в аукционе необходимо внести задаток
+                        .row
+                            +btnBlue('Подать заявку')  
+                            +btnBorder('Задать вопрос')    
+                .card-auctions
+                    .zag Похожие лоты
+                    .card-auctions__items
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions1.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions2.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions3.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности

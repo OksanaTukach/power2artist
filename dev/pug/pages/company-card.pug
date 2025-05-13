@@ -1,0 +1,204 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Карточка компании';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1= title
+        .container
+            .card 
+                .card-main(data-aos="fade-right")  
+                    .card-main__photo 
+                        .img 
+                            img(src="./img/content/card-photo2.png")
+                        .desc 
+                            .desc-zag Coca-cola
+                            .item 
+                                .zag Название бренда
+                                .val Coca-cola
+                            .item 
+                                .zag Страна
+                                .val Беларусь
+                            .item 
+                                .zag Телефон
+                                .val +375 (29) 698-69-98
+                            .item 
+                                .zag Email
+                                .val Coca-cola@mail.ru
+                            .item 
+                                .zag Сайт компании
+                                .val Coca-cola.com
+                    .card-main__content
+                        .content-zag Стоимость услуг:
+                        .card-list 
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Продюсирование
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Стоимость услуги
+                                        .val 9000 BYN
+                                    .card-list__item-doc 
+                                        .list-doc
+                                            a(href="/" download).documents
+                                                .img 
+                                                    img(src="./img/content/documents.png")
+                                                .name    
+                                                    span.blue Тариф 1
+                                                    span 16.08.2020, pdf, 15 кб
+                                            a(href="/" download).documents
+                                                .img 
+                                                    img(src="./img/content/documents.png")
+                                                .name    
+                                                    span.blue Тариф 1
+                                                    span 16.08.2020, pdf, 15 кб
+                                        +btnBlue('Заказать услугу')
+
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Продакшн
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Стоимость услуги
+                                        .val 9000 BYN
+                                    .card-list__item-doc 
+                                        .list-doc
+                                            a(href="/" download).documents
+                                                .img 
+                                                    img(src="./img/content/documents.png")
+                                                .name    
+                                                    span.blue Тариф 1
+                                                    span 16.08.2020, pdf, 15 кб
+                                            a(href="/" download).documents
+                                                .img 
+                                                    img(src="./img/content/documents.png")
+                                                .name    
+                                                    span.blue Тариф 1
+                                                    span 16.08.2020, pdf, 15 кб
+                                        +btnBlue('Заказать услугу')
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Аренда площадки
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Стоимость услуги
+                                        .val 9000 BYN
+                                    .card-list__item-doc 
+                                        .list-doc
+                                            a(href="/" download).documents
+                                                .img 
+                                                    img(src="./img/content/documents.png")
+                                                .name    
+                                                    span.blue Тариф 1
+                                                    span 16.08.2020, pdf, 15 кб
+                                            a(href="/" download).documents
+                                                .img 
+                                                    img(src="./img/content/documents.png")
+                                                .name    
+                                                    span.blue Тариф 1
+                                                    span 16.08.2020, pdf, 15 кб
+                                        +btnBlue('Заказать услугу')
+                .card-info(data-aos="fade-left")
+                    .card-info__item.border-blue
+                        .text Сфера деятельности: 
+                            span.blue Маркетинг
+                    .card-info__item.border-blue
+                        .text Оказываемые услуги: 
+                            span.blue Продюсирование, Продашн
+                    .card-info__item.border-blue
+                        .text Регионы, в которых готов(а) работать: 
+                            span.blue РБ, Россия, Америка
+                    .card-info__item 
+                        .text Портфолио
+                        .text.list 
+                            a(href="/" download).documents
+                                .img 
+                                    img(src="./img/content/documents.png")
+                                .name    
+                                    span.blue Тариф 1
+                                    span 16.08.2020, pdf, 15 кб
+                        .text.list 
+                            a(href="/" download).documents
+                                .img 
+                                    img(src="./img/content/documents.png")
+                                .name    
+                                    span.blue Тариф 1
+                                    span 16.08.2020, pdf, 15 кб
+                .card-auctions
+                    .zag Аукционы этой компании
+                    .card-auctions__items
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions1.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions2.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions3.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+
+
+                    
+

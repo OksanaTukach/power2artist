@@ -1,0 +1,107 @@
+$font: "Helvetica";
+$fontSizeMain: 16;
+
+//COLOR
+$green: #379462;
+
+$text: #293B42;
+
+
+$blue: #3DC4E1;
+$lightBlue:#93E9FC;
+$black: #424242;
+$gray: #879699;
+$bread:#9C9C9C;
+
+
+
+
+
+.green {
+  color: $green;
+}
+.bread {
+  color: $bread;
+}
+.text {
+  color: $text;
+}
+.black {
+  color: $black;
+}
+.gray {
+  color: $gray;
+}
+
+
+//SIZE TO VW
+:root {
+  --vwIdth: 1920;
+  @include md-block() {
+    --vwIdth: 1440;
+  }
+  @include sm-block() {
+    --vwIdth: 800;
+  }
+  @include xxs-block() {
+    --vwIdth: 375;
+  }
+}
+
+
+//MEDIA CLASS
+.md-show {
+  display: none !important;
+}
+.xmd-show {
+  display: none !important;
+}
+.sm-show {
+  display: none !important;
+}
+.xs-show {
+  display: none !important;
+}
+.xxs-show {
+  display: none !important;
+}
+@include md-block() {
+  .md-show {
+    display: flex !important;
+  }
+  .md-hide {
+    display: none !important;
+  }
+}
+@include xmd-block() {
+  .xmd-show {
+    display: flex !important;
+  }
+  .xmd-hide {
+    display: none !important;
+  }
+}
+@include sm-block() {
+  .sm-show {
+    display: flex !important;
+  }
+  .sm-hide {
+    display: none !important;
+  }
+}
+@include xs-block() {
+  .xs-show {
+    display: flex !important;
+  }
+  .xs-hide {
+    display: none !important;
+  }
+}
+@include xxs-block() {
+  .xxs-show {
+    display: flex !important;
+  }
+  .xxs-hide {
+    display: none !important;
+  }
+}

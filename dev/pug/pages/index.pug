@@ -1,0 +1,140 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Главная';
+block libs-js
+    script(src="./js/fv.js")
+
+block content
+    ul.style-temp
+        li.green
+            a(href="./main.html") 1. Главная
+            ul 
+                li.green
+                    a.ajax-form(href="form-reg.html" data-class='w500') 1.1 Регистрация
+                li.green
+                    a.ajax-form(href="form-attention.html" data-class='w500') 1.2 Внимание
+                li.green
+                    a.ajax-form(href="form-enter.html" data-class='w500') 1.3 Войти
+                li.green
+                    a.ajax-form(href="form-600.html" data-class='w600') 1.4 Пример модалки на 600px
+                li.green
+                    a.ajax-form(href="form-800.html" data-class='w800') 1.4 Пример модалки на 800px
+        li.green
+            a(href="./main2.html") 1.4 Главная для зарегестрированных пользователей
+        li.green
+            a(href="./services-1lvl.html") 2. Услуги первого уровня
+        li.green
+            a(href="./offer_for_artist.html") 3. Предложение для артиста
+        li 4. Заявки для артиста
+            ul 
+                li.green 
+                    a(href="./incoming-request-artist.html") 4.1 Входящая заявка
+                li.green
+                    a(href="./outgoing-request-artist.html") 4.2 Исходящая заявка
+        li 5. Заявки для компании
+            ul 
+                li.green
+                    a(href="./incoming-request-company.html") 5.1 Входящая заявка
+                li.green
+                    a(href="./outgoing-request-company.html") 5.2 Исходящая заявка
+        li 6. Заявки для персонала
+            ul 
+                li.green
+                    a(href="./incoming-request-staff.html") 6.1 Входящая заявка
+                li.green 
+                    a(href="./outgoing-request-staff.html") 6.2 Исходящая заявка
+        li.green
+            a(href="./artist-profile.html") 7. Анкета артиста ЛК
+            ul 
+                li.green 
+                    a(href="./lc-bid.html") ЛК Заявки
+                li.green 
+                    a(href="./lc-auction.html") ЛК Аукционы
+        li.green 
+            a(href="./company-profile.html") 8. Анкета компании ЛК
+            ul 
+                li.green 
+                    a(href="./lc-bid.html") ЛК Заявки
+                li.green 
+                    a(href="./lc-auction.html") ЛК Аукционы
+        li.green 
+            a(href="./staff-profile.html") 9. Анкета персонала ЛК
+            ul 
+                li.green 
+                    a(href="./lc-bid.html") ЛК Заявки
+                li.green 
+                    a(href="./lc-auction.html") ЛК Аукционы
+        li.green 
+            a(href="./artist-card.html") 10. Карточка артиста
+        li.green 
+            a(href="./company-card.html") 11. Карточка компании
+        li.green 
+            a(href="./lc-moderator.html") 12. Личный кабинет модератора
+        li.green
+            a(href="./artists.html") 13. Артисты
+        li.green
+            a(href="./add-service.html") 14. Добавление услуги
+        li.green
+            a(href="./services-2lvl.html") 15. Услуги второго уровня
+        li.green
+            a(href="./catalog-auction.html") 16. Каталог аукционов
+        li.green
+            a(href="./catalog-bid.html") 17. Каталог заявок
+        li 18. Создание аукциона
+            ul 
+                li.green
+                    a(href="./hotels.html") 18.1 Отели
+                li.green
+                    a(href="./passenger-transport.html") 18.2 Транспорт легковой
+                li.green
+                    a(href="./air-transport.html") 18.3 Транспорт авиа
+                li.green
+                    a(href="./private1.html") 18.4 Частное 1
+                li.green
+                    a(href="./private2.html") 18.5 Частное 2
+                li.green
+                    a(href="./private3.html") 18.6 Частное 3
+                li.green
+                    a(href="./tour.html") 18.7 Создание тура
+                li.green
+                    a(href="./festival.html") 18.8 Создание фестиваля
+                li.green
+                    a(href="./solo.html") 18.9 Создание сольника
+        li 19. Аукцион  
+            ul 
+                li.green
+                    a(href="./auction-staff.html") 19.1 От персонала
+                li.green
+                    a(href="./auction-corporate.html") 19.2 Корпоративное
+                li.green
+                    a(href="./auction-private.html") 19.3 Частное
+                li.green
+                    a(href="./auction-tour.html") 19.4 Тур
+                li.green
+                    a(href="./auction-festival.html") 19.5 Фестиваль
+                li.green 
+                    a(href="./auction-solo.html") 19.6 Сольник
+                li.green
+                    a(href="./auction-state1.html") 19.7 Зарегестрирован, но не участвовал
+                li.green
+                    a(href="./auction-state2.html") 19.8 Когда ты один участник
+                li.green
+                    a(href="./auction-state3.html") 19.9 Подача заявок
+                li.green
+                    a(href="./auction-state3-2.html") 19.10 Подача заявок с задатком
+                li.green
+                    a(href="./auction-state4.html") 19.11 Аукцион завершен
+                li.green
+                    a(href="./auction-state4-1.html") 19.11 Аукцион завершен с задатком
+        li.green
+            a(href="./auction-moderation.html") 20. Модерация аукциона
+        li.green
+            a(href="./reglament.html") 21. Регламент
+        li.green
+            a(href="./about.html") 22. О проекте
+
+        li
+            a(href="./form.html") Формы
+        li
+            a(href="./button.html") Кнопки

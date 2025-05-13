@@ -1,0 +1,73 @@
+.lc-header
+    form.filter
+        +select('Тип уведомления', 'Регистрация') 
+        +inputDateRange('Дата')
+        a(href="#").clear-filter Очистить фильтр
+        .lc-search.--end
+            input(type="text" placeholder="Поиск уведомления")
+            .lc-search__icon 
+                +icon('search')
+.lc-content 
+    .lc-table 
+        .lc-table__zag Все уведомления
+        table
+            tbody 
+                tr.table-head
+                    th Тип уведомления
+                    th Сообщение уведомления
+                    th Дата и время
+                    th
+                tr  
+                    td
+                        span Регистрация нового пользователя
+                            span.lc-table__name-label Новое
+                    td
+                        span Поступило
+                            a(href="#") &nbsp;предложение&nbsp;
+                            | на вашу заявку
+                            a(href="#") &nbsp;№1499
+                    td
+                        span 21.10.2020 16:00
+                    td 
+                        a(href="")
+                            +icon('trash')
+                tr  
+                    td
+                        span Заявка на добавление новой категории
+                    td
+                        p Поступила заявка на участие в торгах по лоту №154
+                    td
+                        span 12.09.2020 15:54
+                    td 
+                        a(href="")
+                            +icon('trash')
+                tr  
+                    td
+                        span Заявка на создание нового аукциона
+                    td
+                        p Поступила заявка на создание нового аукциона
+                    td
+                        span 09.08.2020 12:38
+                    td 
+                        a(href="")
+                            +icon('trash')
+                tr  
+                    td
+                        span Заявка на участие в аукциона
+                    td
+                        p Поступила заявка на участие в торгах по лоту № 196 
+                    td
+                        span 02.03.2020 19:36
+                    td 
+                        a(href="")
+                            +icon('trash')
+                tr  
+                    td
+                        span Регистрация нового пользователя
+                    td
+                        p Новый пользователь зарегистрировался на площадке Power2Artist
+                    td
+                        span 21.10.2020 16:00
+                    td 
+                        a(href="")
+                            +icon('trash')

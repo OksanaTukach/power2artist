@@ -1,0 +1,275 @@
+// $error-color: #f00;
+
+// .fv {
+// 	margin-top: 55px;
+
+// 	@include xxs-block() {
+// 		margin-top: 85px;
+// 	}
+
+// 	&__heading {
+// 		width: 100%;
+// 		margin-bottom: 20px;
+// 		text-align: center;
+// 		background-color: #dbdbdb;
+// 		font-weight: bold;
+// 		text-transform: uppercase;
+// 		letter-spacing: 1px;
+// 		border-radius: 2px 2px 0 0;
+// 		padding: 20px;
+// 	}
+
+// 	&__block {
+// 		width: 50%;
+// 		min-width: 300px;
+// 		margin-bottom: 20px;
+// 		padding: 0 20px;
+
+// 		@include xxs-block() {
+// 			width: 100%;
+// 		}
+
+
+
+// 		&-popup {
+// 			position: fixed;
+// 			background: white;
+// 			width: 100%;
+// 			top: 0;
+// 			left: 0;
+// 			display: flex;
+// 			flex-wrap: wrap;
+// 			justify-content: space-around;
+// 			align-items: center;
+// 			padding: 15px;
+// 			border-bottom: 1px solid #e5e5e5;
+// 			z-index: 10;
+
+// 			a {
+// 				margin-bottom: 10px;
+// 			}
+// 		}
+
+// 		&-sbmt {
+// 			width: 100%;
+// 			display: flex;
+// 			justify-content: center;
+// 			align-items: center;
+
+// 			input {
+// 				width: auto;
+// 			}
+// 		}
+// 	}
+
+// 	&__error {
+// 		width: 100%;
+// 		padding: 20px;
+// 		text-align: center;
+// 		background-color: red;
+// 		color: #fff;
+// 		display: none;
+// 		margin-bottom: 20px;
+
+// 		&.error {
+// 			display: block;
+// 			color: #fff !important;
+// 		}
+
+// 	}
+
+// 	.required {
+// 		span {
+// 			position: relative;
+// 			margin-right: 10px;
+
+// 			&:before {
+// 				content: '*';
+// 				position: absolute;
+// 				width: 10px;
+// 				height: 100%;
+// 				left: 100%;
+// 				top: 0;
+// 				color: $error-color;
+// 			}
+// 		}
+
+// 		&--password {
+// 			position: relative;
+
+// 			input {
+// 				padding-right: 30px;
+// 			}
+// 		}
+
+// 		.password-control {
+// 			position: absolute;
+// 			top: 27px;
+// 			right: 6px;
+// 			display: inline-block;
+// 			width: 20px;
+// 			height: 20px;
+// 			background-image: url(../img/svg/view.svg);
+
+// 			&.view {
+// 				background-image: url(../img/svg/no-view.svg);
+// 			}
+// 		}
+
+// 		.password-first {
+// 			&.succes {
+// 				.fv__block-error {
+// 					display: none !important;
+// 				}
+// 			}
+// 		}
+
+// 		.password-second {
+// 			// display: none;
+// 			margin-top: 20px;
+
+// 			&.show {
+// 				display: block !important;
+// 			}
+// 		}
+
+// 		.not-equally {
+// 			span {
+// 				color: $error-color;
+// 			}
+	
+// 			input {
+// 				color: $error-color;
+// 				border-color: $error-color;
+// 			}
+// 			.fv__block-not-equally {
+// 				display: block;
+// 				color: $error-color;
+// 			}
+
+// 			.fv__block-error {
+// 				display: none !important;
+// 			}
+
+// 		}
+
+// 	}
+
+// 	.input-file-list {
+// 		p {
+// 			display: flex;
+// 			align-items: center;
+// 			margin: 5px 10px 5px 0;
+
+// 			span {
+// 				margin-left: 8px;
+// 				display: block;
+// 				width: 8px;
+// 				height: 8px;
+// 				position: relative;
+// 				cursor: pointer;
+// 				transition: 1s;
+
+// 				&:before,
+// 				&:after {
+// 					content: '';
+// 					position: absolute;
+// 					width: 100%;
+// 					height: 1px;
+// 					background: $error-color;
+// 					top: 50%;
+// 					left: 50%;
+// 					transition: .5s;
+// 				}
+
+// 				&:before {
+// 					transform: translate(-50%, -50%) rotate(45deg);
+// 				}
+
+// 				&:after {
+// 					transform: translate(-50%, -50%) rotate(-45deg);
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	.error {
+
+// 		span {
+// 			color: $error-color;
+// 		}
+
+// 		input {
+// 			color: $error-color;
+// 			border-color: $error-color;
+// 		}
+
+// 		.jq-selectbox__select {
+// 			border-color: $error-color;
+// 		}
+
+// 		.fv__block-error{
+// 			display: block;
+// 			color: $error-color;
+// 			border-color: $error-color;
+// 		}
+
+// 		&-online {
+
+// 			span {
+// 				color: $error-color;
+// 			}
+
+// 			input {
+// 				color: $error-color;
+// 				border-color: $error-color;
+// 			}
+
+// 			.jq-selectbox__select {
+// 				border-color: $error-color;
+// 			}
+
+// 			.fv__block-error {
+// 				display: block;
+// 				color: red;
+// 			}
+// 		}
+
+// 	}
+
+// 	.succes {
+
+// 		span {
+// 			color: $succes-color;
+// 		}
+
+// 		input {
+// 			color: $succes-color;
+// 			border-color: $succes-color;
+// 		}
+
+// 		.jq-selectbox__select {
+// 			border-color: $succes-color;
+// 		}
+
+// 		.fv__block-succes {
+// 			display: block;
+// 			color: green;
+// 		}
+// 		.fv__block-error{
+// 			display: none;
+// 		}
+// 	}
+
+// 	input:focus {
+// 		outline: none;
+// 		box-shadow: none;
+// 	}
+
+// 	.fv__block-error,
+// 	.fv__block-not-equally,
+// 	.fv__block-succes {
+// 		display: none;
+// 	}
+
+// }

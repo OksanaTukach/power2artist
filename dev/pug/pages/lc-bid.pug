@@ -1,0 +1,216 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Личный кабинет';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./libs/multiple-select.js")
+    script(src="./js/fv.js")
+    script(src="./js/form.js")
+    script(src="./js/lc-artist.js")
+    script(src="./js/profile.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1= title
+        .lc 
+            .container 
+                .lc-tab.js-lc-tab 
+                    .lc-tab__head
+                        a.lc-tab__head-el(href="#")
+                            span Мои данные
+                        a.lc-tab__head-el.active(href="#")
+                            span Заявки
+                        a.lc-tab__head-el(href="#")
+                            span Аукционы
+                    .lc-tab__body.js-lc-tab__body
+                        .lc-tab__body-el
+                            .lc-tab.js-lc-tab
+                                .lc-tab__head.lc-tab__head--mydata
+                                    a.lc-tab__head-el.active(href="#")
+                                        span Входящие заявки
+                                    a.lc-tab__head-el(href="#")
+                                        span Исходящие заявки
+                                .lc-tab__body.js-lc-tab__body
+                                    .lc-tab__body-el
+                                        .lc-btn__new-bid
+                                            +btnAdd('Создать новую заявку')
+                                        .lc-table 
+                                            .lc-table__zag Входящие заявки
+                                            table
+                                                tbody 
+                                                    tr.table-head
+                                                        th Номер
+                                                        th Информация
+                                                        th Дата
+                                                        th Статус
+                                                        th Валюта сделки
+                                                        th
+
+                                                    tr.attention.processing  
+                                                        td
+                                                            span 09847
+                                                        td
+                                                            span Заявка на проведение мероприятия «концерт Beyonce»
+                                                        td
+                                                            span 22.02.2020
+                                                        td.status 
+                                                            +icon('clock')
+                                                            span В обработке
+                                                        td 
+                                                            span BYN
+                                                        td 
+                                                            a(href="")
+                                                                +icon('trash')
+                                                    tr.attention.rejected   
+                                                        td
+                                                            span 09821
+                                                        td
+                                                            span Заявка на организацию концерта «Linkin Park»
+                                                        td
+                                                            span 22.02.2020
+                                                        td.status  
+                                                            +icon('cancel')
+                                                            span Отказано
+                                                        td 
+                                                            span RUB
+                                                        td
+                                                            a(href="")
+                                                                +icon('archive')
+                                                            
+                                                    tr.attention.approved  
+                                                        td
+                                                            span 04121
+                                                        td
+                                                            span Заявка на проведение мероприятия «концерт Beyonce»
+                                                        td
+                                                            span 22.02.2020
+                                                        td.status  
+                                                            +icon('check')
+                                                            span Согласовано
+                                                        td 
+                                                            span BYN
+                                                        td 
+                                                    tr.processing  
+                                                        td
+                                                            span 04564
+                                                        td
+                                                            span Заявка на проведение мероприятия «концерт Linkin Park»
+                                                        td
+                                                            span 22.02.2020
+                                                        td.status 
+                                                            +icon('clock')
+                                                            span В обработке
+                                                        td 
+                                                            span BYN
+                                                        td 
+                                                    tr.rejected   
+                                                        td
+                                                            span 03522
+                                                        td
+                                                            span Заявка на проведение мероприятия «концерт Beyonce»
+                                                        td
+                                                            span 22.02.2020
+                                                        td.status  
+                                                            +icon('cancel')
+                                                            span Отказано
+                                                        td 
+                                                            span BYN
+                                                        td 
+                                                            
+
+                                    .lc-tab__body-el
+                                        .lc-btn__new-bid
+                                            +btnAdd('Создать новую заявку')
+                                        .lc-table 
+                                            .lc-table__zag Исходящие заявки
+                                            table
+                                                tbody 
+                                                    tr.table-head
+                                                        th Номер
+                                                        th Информация
+                                                        th Дата
+                                                        th Статус
+                                                        th Валюта сделки
+                                                        th
+
+                                                    tr.attention.processing  
+                                                        td
+                                                            span 09847
+                                                        td
+                                                            span Заявка на проведение мероприятия «концерт Beyonce»
+                                                        td
+                                                            span 22.02.2020
+                                                        td.status 
+                                                            +icon('clock')
+                                                            span В обработке
+                                                        td 
+                                                            span BYN
+                                                        td 
+                                                            a(href="")
+                                                                +icon('trash')
+                                                    tr.attention.rejected   
+                                                        td
+                                                            span 09821
+                                                        td
+                                                            span Заявка на организацию концерта «Linkin Park»
+                                                        td
+                                                            span 22.02.2020
+                                                        td.status  
+                                                            +icon('cancel')
+                                                            span Отказано
+                                                        td 
+                                                            span RUB
+                                                        td 
+                                                            
+                                                    tr.attention.approved  
+                                                        td
+                                                            span 04121
+                                                        td
+                                                            span Заявка на проведение мероприятия «концерт Beyonce»
+                                                        td
+                                                            span 22.02.2020
+                                                        td.status  
+                                                            +icon('check')
+                                                            span Согласовано
+                                                        td 
+                                                            span BYN
+                                                        td 
+                                                    tr.processing  
+                                                        td
+                                                            span 04564
+                                                        td
+                                                            span Заявка на проведение мероприятия «концерт Linkin Park»
+                                                        td
+                                                            span 22.02.2020
+                                                        td.status 
+                                                            +icon('clock')
+                                                            span В обработке
+                                                        td 
+                                                            span BYN
+                                                        td 
+                                                    tr.rejected   
+                                                        td
+                                                            span 03522
+                                                        td
+                                                            span Заявка на проведение мероприятия «концерт Beyonce»
+                                                        td
+                                                            span 22.02.2020
+                                                        td.status  
+                                                            +icon('cancel')
+                                                            span Отказано
+                                                        td 
+                                                            span BYN
+                                                        td 

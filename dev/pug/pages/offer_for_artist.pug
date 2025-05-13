@@ -1,0 +1,88 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Предложение для артиста';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./libs/multiple-select.js")
+    script(src="./js/fv.js")
+    script(src="./js/form.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1= title
+        .offer 
+            .container 
+                .offer-container 
+                    .offer-info
+                        .offer-img
+                            img(src="../img/content/offer-for-artist.png")
+                        .offer-desc
+                            .zag Beyonce
+                            .text Бейо́нсе Жизе́ль Но́улз-Картер более известная просто как Бейо́нсе — американская певица в стиле R’n’B, актриса, танцовщица, музыкальный продюсер. Будучи ребёнком, участвовала в разных вокальных и танцевальных конкурсах, принимала участие в школьной художественной самодеятельности.
+                            .info
+                                .items
+                                    .item
+                                        .zag Страна:
+                                        .val Америка
+                                    .item
+                                        .zag Жанр:
+                                        .val Поп
+                                .items
+                                    .item
+                                        .zag Регионы, в которых готова работать:
+                                        .val Америка, Беларусь, Россия
+                                    .item
+                                        .zag Сайт исполнителя:
+                                        .val https://www.beyonce.com/
+                    form.offer-form(data-aos="fade-down")
+                        .form-group
+                            .form-group-items
+                                .form-group-zag Информация о мероприятии
+                                .form-group-items
+                                    +selectReq('Тип мероприятия', 'Сольник')
+                                    +btnAdd('Добавить еще мероприятие')
+                                .form-group-items
+                                    +selectReq('Страна', 'Беларусь')
+                                    +selectReq('Город', 'Минск')
+                                .form-group-items
+                                    +inputDate('Дата', '28.10.2020')
+                                    +inputTime('Время выступления')
+                                .form-group-items
+                                    +inputText('Площадка', 'Например: ConcertHall')
+                                    +inputText('Адрес площадки', 'Например: пр-т Независимости 95')
+                                    +inputText('Сайт площадки', 'Например: ConcertHall.com')
+                                .form-group-items
+                                    +inputNum('Вместимость', 'Например: 1000')
+                                    +inputNum('Количество билетов в продаже', 'Например: 1000')
+                                    +inputNum('Количество сидячих/стоячих мест', 'Например: 1000')
+                                .form-group-items
+                                    +inputText('Средняя цена билета', 'Например: 50 BYN')
+                                    +inputText('Длительность выступления', 'Например: 2 часа')
+                                    +selectReq('От какой компании предложение', 'ConcertBY')
+                                .form-group-items
+                                    +inputSel('Гонорар')
+                                    +inputText66('Доп. условия по гонорару', 'Например: Сверхурочная работа оплачивается в двойном размере')
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Условия
+                            .form-group-items
+                                    +select-mult66('Расходы на стороне артиста')
+                                    +select-mult66('Расходы на стороне промоутера')
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Примечание
+                            .form-group-items
+                                +addDocument('Описание проекта')
+                        +btnBlue('Отправить предложение')
+

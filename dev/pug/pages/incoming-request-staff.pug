@@ -1,0 +1,82 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Входящая заявка';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1 Входящая заявка: 1709200001
+        .request 
+            .container 
+                .form-container
+                    .val-items
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Общая информация
+                            .form-group-items
+                                +formVal('Сфера деятельности', 'Продакшн') 
+                                +formVal('Страна', 'Беларусь') 
+                                +formVal('Город', 'Минск') 
+                                +formVal('Дата', '28.10.2020') 
+                                +formVal('Период', 'с 28.10.2020 по 29.10.2020') 
+                                +formVal('Время', '21:00') 
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Условия
+                            .form-group-items
+                                +formVal('Тип занятости', 'Свет') 
+                                +formVal('График работ', 'с 10 до 18') 
+                                +formVal('Опыт работы', '10 лет') 
+                                +formVal('Максимальная цена за услугу', '5000 BYN') 
+                                +formValCur('Гонорар', '5000', 'BYN')
+                                +formVal66Text('Описание проекта', 'Выступление на открытой площадке. ЦА 18-20 лет') 
+                        .val-items-zag Информация о заказчике
+                        .val-items-information(data-aos="fade-right")
+                            .request-img 
+                                img(src="./img/content/offer-for-artist.png")
+                            .desc
+                                .row 
+                                    +formVal('Название компании/ Имя', 'Beyonce') 
+                                    +formVal('Сайт компании', 'https://www.cocs-cola.com/') 
+                                .row 
+                                    +formVal('Страна', 'Беларусь') 
+                                    +formVal('Город', 'Минск') 
+                        .val-items-information(data-aos="fade-right")
+                            .request-img--anonymous 
+                                +icon('anonymous')
+                                .text Пользователь предпочел скрыть информацию о себе
+                        .border
+                        .row
+                            .documents(data-aos="fade-right")
+                                .documents-zag Прикрепленные документы
+                                .documents-items
+                                    +icon('download')
+                                    .documents-list
+                                        a(href="#") Устав.pdf
+                                        a(href="#") Приказ на директора.pdf
+                                        a(href="#") Свидетельство.jpg 
+                        .form-group(data-aos="fade-down")
+                            .form-group-items
+                                +textarea('Оставьте Ваш коментарий к входящей заявке', 'Напишите Ваш коментарий...')
+                        .row
+                            +btnBlue('Принять предложение')
+                            +btnBorder('Отклонить предложение')
+
+
+
+
+
+                    

@@ -1,0 +1,177 @@
+.reglament {
+    display: flex;
+    &__container {
+        width: 50%;
+        @include sm-block(){
+            width: 100%;
+        }
+    }
+    .reglament-select {
+        @include sm-block(){
+            margin-bottom: toVw(40);
+        }
+    }
+    .reglament-download {
+        border: 1px solid $blue;
+        border-radius: 3px;
+        padding: toVw(42) toVw(45) toVw(42) toVw(115);
+        background-position-y: center;
+        background-position-x: toVw(40);
+        @include xxs-block() {
+            padding: toVw(15) toVw(15) toVw(15) toVw(40);
+            background-position-x: toVw(10);
+        }
+        .zag {
+            font-weight: bold;
+            font-size: toVw(20);
+            margin-bottom: toVw(12);
+        }
+        p {
+            font-size: toVw(14);
+            line-height: 150%;
+        }
+        a {
+            margin-top: toVw(10);
+            display: flex;
+            align-items: center;
+            .icon {
+                fill: $blue;
+                margin-right: toVw(20);
+                width: toVw(20);
+                height: toVw(20);
+            }
+            span {
+                color: $blue;
+                text-decoration: underline;
+                transition: .3s;
+            }
+            &:hover {
+                span {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .form-item {
+        width: 100%;
+        height: auto;
+        .jq-selectbox {
+            padding: toVw(9) toVw(10) toVw(11) toVw(30);
+        }
+    }
+    &-list {
+        &__item {
+            margin-top: toVw(35);
+            margin-bottom: toVw(40);
+
+            .zag {
+                font-weight: bold;
+                font-size: toVw(20);
+                color: #2B2B2B;
+            }
+            .val {
+                font-size: toVw(16);
+                ol {
+                    counter-reset: item;
+                    li {
+                        display: block;
+                        margin-top: toVw(25);
+                        
+                    }
+                }
+                p {
+                    margin-top: toVw(25);
+                }
+
+            }
+        }
+    }
+    &-menu {
+        width: 50%;
+        padding-left: toVw(210);
+        padding-top: toVw(150);
+        @include md-block () {
+            padding-left: toVw(50);
+        }
+        @include sm-block() {
+            position: fixed;
+            right: -290px;
+            top: 20%;
+            width: 290px;
+            background-color: #fff;
+            padding-left: 0;
+            transition: .5s;
+            padding: 0;
+            z-index: 19;
+            box-shadow: 7px 4px 7px 0px rgba(0, 0, 0, 0.21);
+        }
+        
+        &__list {
+            margin-top: toVw(40);
+            @include sm-block() {
+                margin-top: 0;
+                overflow: scroll;
+                max-height: 500px;
+            }
+            ul {
+                li {
+                    border-top: 1px solid #EFEFEF;
+                    border-bottom: 1px solid #EFEFEF;
+                    min-height: toVw(62);
+                    
+                    font-size: toVw(16);
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    
+                    a {
+                        height: 100%;
+                        width: 100%;
+                        opacity: 0.7;
+                        transition: .3s;
+                        @include sm-block(){
+                           
+                            padding-left: toVw(10);
+                            padding-right: toVw(10);
+                        }
+                        span {
+                            font-size: toVw(14);
+                            color: rgba(55, 55, 55, 0.4);
+                            line-height: 1.2;
+                        }
+                        .name {
+                            line-height: 50%;
+                        }
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+        .reglament-btn__mob {
+            display: none;
+            width: toVw(40);
+            height: toVw(40);
+            @include sm-block() {
+                display: block;
+                position: absolute;
+                left: toVw(-40);
+                top: 0;
+            }
+            
+            .btn {
+                border: none;
+                box-shadow: none;
+                width: auto;
+                background-color: $blue;
+                .icon {
+                    fill: white;
+                }
+            }
+        }
+        &.open {
+            right: 0;
+        }
+    }
+}

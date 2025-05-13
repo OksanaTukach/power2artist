@@ -1,0 +1,70 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Исходящая заявка';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./libs/multiple-select.js")
+    script(src="./js/fv.js")
+    script(src="./js/form.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1 Исходящая заявка: 1709200001
+        .request 
+            .container 
+                .form-container 
+                    form.request-form
+                        .form-group
+                            +inputTextReq('От какой компании предложение', 'Например: ConcertHall')
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Общая информация
+                            .form-group-items
+                                +inputTimeReq('Время')
+                                +inputDateReq('Дата')
+                                +selectReq('Тип мероприятия', 'Сольный')
+                                +select2Req('Страна', 'Беларусь')
+                                +selectReq('Город', 'Минск')
+                                +inputDate('Дата', '28.10.2020')
+                                +inputTime('Время выступления')
+                                +inputTime('Длительность выступления')
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Условия
+                            .form-group-items
+                                .row
+                                    +inputTextReq('Гонорар', 'Например: 30000 BYN')
+                                +inputText66('Доп. условия по гонорару', 'Например: При переработке + 1000 BYN')
+                                +select-mult66Req('Расходы на стороне артиста')
+                                +select-mult66Req('Расходы на стороне промоутера')
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Площадка
+                            .form-group-items
+                                +inputTextReq('Площадка', 'Например: Динамо')
+                                +inputText('Адрес площадки', 'Например: ул.Побуды, 10')
+                                +inputText('Сайт площадки', 'Например: 1000')
+                                +inputNum('Вместимость', 'Например: 5000')
+                                +inputNumReq('Количество билетов  в продаже', 'Например: 5000')
+                                +inputText('Количество сидячих/стоячих мест', 'Например: 3000/2000')
+                        .border
+                        .form-group(data-aos="fade-down")
+                            .form-group-items
+                                +textarea('Описание проекта', 'Например: Выступление на открытой площадке. ЦА 18-20 лет')
+                        .border
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Копии документов
+                            .form-group-items
+                                +addDocument('Копии документов')
+                        +check('Показать мои личные данные получателю заявки')
+                        +btnBlue('Отправить')

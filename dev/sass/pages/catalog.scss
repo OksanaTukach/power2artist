@@ -1,0 +1,10 @@
+.catalog {
+    margin-top: toVw(45);
+    .filter {
+        border-bottom: 1px solid #EFEFEF;
+        padding-bottom: toVw(40);
+    }
+    .card-auctions {
+        padding-top: 0;
+    }
+}

@@ -1,0 +1,468 @@
+
+.lc {
+    margin-top: toVw(45);
+    &-tab {
+        .menu-2lvl {
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform: translateY(120%);
+            z-index: 15;
+            transition: .5s;
+            opacity: 0;
+            width: max-content;
+            @include xmd-block(){
+                top: 50%;
+                width: 100%;
+            }
+            &.open {
+                visibility: visible;
+                opacity: 1;
+                transform: none;
+                bottom: auto;
+                top: auto;
+            }
+            ul {
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+                background-color: white;
+                margin-top: toVw(10);
+    
+                
+                li a {
+                    display: block;
+                    padding: toVw(15);
+                    position: relative;
+                    &:hover {
+                        background-color: #EDF8FA;
+                    }
+                    &.active {
+                        background-color: $blue;
+                        color: white;
+                    }
+                    @include xmd-block(){
+                        padding: toVw(5);
+                    }
+                }
+    
+            }
+        }
+        
+    }
+    &-link, &-tab {
+        &__head {
+            display: flex;
+            margin-bottom: toVw(30);
+            position: relative;
+            @include md-block(){
+                flex-wrap: wrap;
+            }
+            &.-center {
+                justify-content: center;
+            }
+            &-item {
+                @include xxs-block(){
+                    width: 100%;
+                }
+            }
+            &-el {
+                padding: toVw(10) toVw(35);
+                background-color: #EDF8FA;
+                border-radius: 3px;
+                position: relative;
+                cursor: pointer;
+                transition: .5s;
+                span {
+                    font-size: toVw(16);
+                    color: $black;
+                }
+                @include xxs-block(){
+                    width: 100%;
+                }
+                
+                &:before {
+                    content: '';
+                    position: absolute;
+                    transition: .5s;
+                    width: 0%;
+                    height: 2px;
+                    background-color: #3DC4E1;
+                    left: 50%;
+                    bottom: 0;
+                }
+                &.active {
+                    background-color: white;
+                    &:before {
+                        width: 100%;
+                        left: 0%;
+                    
+                    } 
+                    &:hover {
+                        span {
+                            color: $black;
+                        }
+                    }
+                }
+                &:hover {
+                    span {
+                        color: $blue;
+                    }
+                }
+            }
+            &-item {
+                position: relative;
+                &:hover {
+                    .menu-2lvl {
+                            @include from($break_xmd) {
+                                visibility: visible;
+                                opacity: 1;
+                                transform: translateY(100%);
+                            }
+                        
+                       
+                    }
+                }
+            }
+        }
+        &__body {
+            position: relative;
+            &-el {
+                display: block;
+                transition: .3s;
+                &.active {
+                    display: block;
+                }
+            }
+        }
+        &-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: toVw(35);
+            .btn.btn-add {
+                margin-top: 0;
+                @include xxs-block(){
+                    margin-top: 15px;
+                }
+            }
+            @include xxs-block(){
+                flex-wrap: wrap;
+            }
+        }
+        &-zag {
+            font-size: toVw(20);
+            color: $black;
+            font-weight: bold;
+            display: flex;
+            .tooltips {
+                margin-left: toVw(10);
+                margin-top: toVw(3);
+            }
+            .btn.btn-add {
+                margin: 0;
+            }
+        }
+    }
+    &-form-zag {
+        font-size: toVw(16);
+        color: $black;
+        margin-top: toVw(45);
+    }
+    .form-photo {
+        width: calc((100% - 4.2vw) / 3);
+        @include sm-block(){
+            width: calc((100% - 5vw) / 2);
+        }
+        @include xxs-block(){
+            width: 100%;
+        }
+        &--img {
+            position: relative;
+            img {
+                width: 100%;
+                max-width: none;
+                height: 100%;
+            }
+            .icon {
+                position: absolute;
+                bottom: 0px;
+                right: 0px;
+                transform: translate(50%, 20%);
+                transition: .3s;
+            }
+        }
+    }
+    .lc-info {
+        width: 66%;
+        .row .form-item {
+            width: calc((100% - 2.1vw) / 2);
+            margin-right: toVw(40);
+            &:nth-child(2n){
+                margin-right: 0;
+            }
+            @include md-block(){
+                width: calc((100% - 4.2vw) / 3);
+            }
+            @include sm-block(){
+                width: calc((100% - 5vw) / 2);
+            }
+            @include xxs-block(){
+                width: 100%;
+            }
+        }
+        @include md-block(){
+            width: 100%;
+        }
+        
+    }
+    .row.--photo {
+        justify-content: space-between;
+        margin-top: toVw(25);
+        @include md-block(){
+            align-items: center;
+            justify-content: start;
+        }
+    }
+    .lc-btn__new-bid {
+        position: absolute;
+        top: toVw(-75);
+        right: 0;
+        .btn {
+            margin-top: 0;
+        }
+        @include md-block(){
+            position: static;
+        }
+    }
+}
+.lc-form--cost {
+    display: none;
+    width: 100%!important;
+    margin-top: toVw(30);
+    .form-group-zag {
+        font-weight: bold;
+        font-size: toVw(14);
+        text-transform: none;
+    }
+    .form-item {
+        margin-top: toVw(16);
+    }
+}
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+    &-zag {
+        width: 100%;
+        font-size: toVw(20);
+        font-weight: bold;
+        margin-bottom: toVw(30);
+    }
+    &-date {
+        width: toVw(320);
+        @include xxs-block() {
+            width: 100%;
+        }
+        .ui-datepicker-inline {
+            width: 100%;
+            border: none;
+            box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.04);
+            border-radius: 10px;
+            padding: toVw(22);
+            .ui-datepicker-title {
+                display: block;
+                margin: auto;
+                span {
+                    font-size: toVw(16);
+                    font-weight: normal;
+                }
+            }
+            .ui-datepicker-prev {
+                display: block;
+                width: toVw(28);
+                height: toVw(28);
+                border: none;
+                background: none;
+                left: 0;
+                top: 0;
+                cursor: pointer;
+                span {
+                    background-image: url(../img/content/arrow-calendar.png);
+                    background-size: cover;
+                    width: toVw(28);
+                    height: toVw(28);
+                    left: 0;
+                    top: 0;
+                    margin: 0;
+                    background-position: center;
+                }
+            }
+            .ui-datepicker-calendar .highlight .ui-state-default {
+                background-color: $lightBlue;
+            }
+            .ui-datepicker-next {
+                display: block;
+                width: toVw(28);
+                height: toVw(28);
+                border: none;
+                background: none;
+                
+                right: 0;
+                top: 0;
+                cursor: pointer;
+                span {
+                    background-image: url(../img/content/arrow-calendar.png);
+                    background-size: cover;
+                    width: toVw(28);
+                    height: toVw(28);
+                    left: 0;
+                    top: 0;
+                    margin: 0;
+                    background-position: center;
+                    transform: rotate(180deg);
+                }
+            }
+            .ui-datepicker-calendar {
+                thead {
+                    span {
+                        font-size: toVw(10);
+                        text-transform: uppercase;
+                        font-weight: bold;
+                    }
+                }
+                .ui-state-default {
+                    border: 2px solid white;
+                    height: 100%;
+                    width: 100%;
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .ui-state-active {
+                    background-color: $blue;
+                    border: 2px solid #36B3CE;
+                    border-radius: 50%;
+                    color: white;
+                }
+                td {
+                    height: toVw(39);
+                }
+            }
+            
+        }
+        .ui-widget {
+            font-family: "Helvetica";
+            color: $black;
+        }
+    }
+    &-time {
+        padding-left: toVw(110);
+        @include sm-block(){
+            padding-left: toVw(35);
+        }
+        @include xxs-block() {
+            margin-top: toVw(20);
+            padding-left: 0;
+        }
+        &__zag {
+            font-size: toVw(16);
+            padding-bottom: toVw(25);
+        }
+        &__items {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: toVw(280);
+            align-items: center;
+            .form-item {
+                margin-right: 0;
+                height: auto;
+                max-width: toVw(200);
+                margin-bottom: toVw(10);
+                &.time-double {
+                    display: flex;
+                    width: 100%;
+                    margin-top: 0;
+                }
+                input {
+                    width: 50%;
+                    padding: toVw(10) 0 toVw(10) toVw(22) ;
+                    
+                }
+                .separator {
+                    width: 1px;
+                    background-color: #9C9C9C;
+                    height: 66%;
+                    top: 17%;
+                    position: absolute;
+                    left: 50%;
+                }
+            }
+            .btn {
+                margin-left: toVw(15);
+                margin-bottom: toVw(10);
+                padding: 0;
+                margin-top: 0;
+                
+            }
+        }
+        .form-item-check {
+            margin-top: toVw(10);
+            background: none;
+            padding: 0;
+        }
+        .row {
+            .btn {
+                padding: toVw(10);
+                min-width: toVw(140);
+                margin-top: toVw(20);
+                margin-bottom: toVw(20);
+            }
+        }
+    }
+    &-footer {
+        width: 100%;
+        .form-item-check {
+            width: fit-content;
+            margin-top: toVw(30);
+            padding: toVw(9) toVw(25);
+        }
+        .row {
+            .btn {
+                margin-top: toVw(30);
+                margin-bottom: toVw(30);
+            } 
+        }
+    }
+}
+.lc-note {
+    border: 1px solid $blue;
+    border-radius: 3px;
+    padding: toVw(25) toVw(17) toVw(30) toVw(89);
+    max-width: toVw(400);
+    position: absolute;
+    right: 0;
+    margin-top: toVw(40);
+    background-position-y: center;
+    background-position-x: toVw(16);
+    @include md-block(){
+        position: static;
+        margin: auto;
+        margin-right: toVw(40);
+        margin-left: 0;
+        width: calc((100% - 4.2vw) / 3);
+    }
+    @include sm-block(){
+        width: 100%;
+        margin: auto;
+        margin-bottom: toVw(50);
+    }
+    .zag {
+        font-weight: bold;
+        font-size: toVw(20);
+        line-height: 1.2;
+        margin-bottom: toVw(12);
+    }
+    p {
+        font-size: toVw(14);
+    }
+}

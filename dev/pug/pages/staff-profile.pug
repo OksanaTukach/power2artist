@@ -1,0 +1,103 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Личный кабинет';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./libs/multiple-select.js")
+    script(src="./js/fv.js")
+    script(src="./js/form.js")
+    script(src="./js/profile.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1= title
+        .lc 
+            .container 
+                .lc-tab 
+                    .lc-tab__head
+                        a.lc-tab__head-el.active(href="#")
+                            span Мои данные
+                        a.lc-tab__head-el(href="#")
+                            span Заявки
+                        a.lc-tab__head-el(href="#")
+                            span Аукционы
+                    .lc-tab__body
+                        .lc-tab__body-el
+                            .form-container 
+                                form.lc-form
+                                    .lc-tab-zag Персональные данные компании
+                                    .row.--photo
+                                        .request-img 
+                                            img(src="./img/content/offer-for-artist.png")
+                                        .lc-info 
+                                            .row 
+                                                +inputTextReq('ФИО', 'Например: Дроздов Николай Артемович')
+                                            .row 
+                                                +selectReq('Страна', 'Беларусь')
+                                                +selectReq('Город', 'Минск')
+                                    .border     
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items
+                                            +select-mult66Req('Сфера деятельности')
+                                            +radioCost('Указать стоимость услуги', 'cost')
+                                    .lc-form--cost.js-lc-cost
+                                        .form-group
+                                            .form-group-zag Продюсирование
+                                            .form-group-items
+                                                +inputText('Стоимость услуги', 'Например: 900 BYN')
+                                                +addDocument33('Тарифы на услуги')
+                                        .form-group
+                                            .form-group-zag Продакшн
+                                            .form-group-items
+                                                +inputText('Стоимость услуги', 'Например: 1000 BYN')
+                                                +addDocument33('Тарифы на услуги')
+                                        .form-group
+                                            .form-group-zag Аренда площаки
+                                            .form-group-items
+                                                +inputText('Стоимость услуги', 'Например: 900 BYN')
+                                                +addDocument33('Тарифы на услуги')
+                                        .form-group
+                                            .form-group-zag Отели
+                                            .form-group-items 
+                                                +inputText('Стоимость услуги', 'Например: 900 BYN')
+                                                +addDocument33('Тарифы на услуги')
+                                        .form-group
+                                            .form-group-zag Грузоперевозки
+                                            .form-group-items 
+                                                +inputText('Стоимость услуги', 'Например: 900 BYN')
+                                                +addDocument33('Тарифы на услуги')
+                                        .form-group
+                                            .form-group-zag Транспорт
+                                            .form-group-items 
+                                                +inputText('Стоимость услуги', 'Например: 900 BYN')
+                                                +addDocument33('Тарифы на услуги')
+                                        .border 
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items   
+                                            +selectReq('Тип лица', 'Юридическое лицо') 
+                                            +selectReq('Форма собственности', 'ИП') 
+                                            +inputEmailReq('Email', 'Например: info@mail.ru')
+                                            +inputTelReq()
+                                            +selectReq('Пол', 'Мужской') 
+                                            +inputText('Возраст', 'Например: 45')
+                                            +selectReq('Образование', 'Высшее')
+                                            +select('Профессия', 'Высшее')
+                                            +selectReq('Желаемый тип занятости', 'Полный день')
+                                            +selectReq('График работы', 'Сменный')
+                                            +inputTextReq('Опыт работы', 'Например: 10 лет')
+                                            +addDocument('Портфолио/резюме')
+                                            +btnBlue('Сохранить данные')
+                                            +btnBorder('Отменить редактирование')  

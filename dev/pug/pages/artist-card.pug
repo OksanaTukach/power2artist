@@ -1,0 +1,309 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Карточка артиста';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./js/fv.js")
+    script(src="./js/lc-artist.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1= title
+        .container
+            .card
+                .card-main(data-aos="fade-right")
+                    .card-main__photo 
+                        .img 
+                            img(src="./img/content/card-photo.png")
+                            a(href="calendar.html").calendar.js-ajax-popup
+                                +icon('Calendar')
+                        .desc 
+                            .desc-zag Beyonce (Бейонсе)
+                            .item 
+                                .zag Тип артиста
+                                .val Сольник
+                            .item 
+                                .zag Жанр
+                                .val Pop
+                            .item 
+                                .zag Город
+                                .val Минск
+                            .item 
+                                .zag Страна
+                                .val Беларусь
+                            .item 
+                                .zag Начало карьеры
+                                .val 20.02.2016
+                    .card-main__content
+                        .content-zag Менеджмент, агентство и лейбл:
+                        .card-list 
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Менеджмент
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Имя агента
+                                        .val Федоренко Николай Васильевич
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Агенство
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Имя агента
+                                        .val Федоренко Николай Васильевич
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Лейбл
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Имя агента
+                                        .val Федоренко Николай Васильевич
+                .card-info(data-aos="fade-left")
+                    .card-info__item.border-blue
+                        .info-zag Информация об артисте
+                        .info-desc Бейо́нсе Жизе́ль Но́улз-Картер, более известная просто как Бейо́нсе — американская певица в стиле R’n’B, актриса, танцовщица, музыкальный продюсер. Будучи ребёнком, участвовала в разных вокальных и танцевальных конкурсах, принимала участие в школьной художественной самодеятельности. Ноулз прославилась в конце 1990-х годов, будучи солисткой женской R&B-группы Destiny’s Child.
+                    .card-info__item.border-blue
+                        .text Минимальный гонорар: 
+                            span.blue 10 000 BYN
+                    .card-info__item.border-blue
+                        .text Регионы, в которых готов(а) работать: 
+                            span.blue РБ, Россия, Америка
+                    .card-info__item 
+                        .text.list Часовой пояс: 
+                            span.type EST
+                        .text.list Телефон: 
+                            span.type +375 (29) 635-89-78
+                        .text.list Социальная сеть: 
+                            a(href="#").type vk.com
+                        .text.list Социальная сеть: 
+                            a(href="#").type instagram
+            div С аукционами и не зарегестрирован 
+            .card
+                .card-main(data-aos="fade-right") 
+                    .card-main__photo 
+                        .img 
+                            img(src="./img/content/card-photo.png")
+                            a(href="calendar2.html").calendar.js-ajax-popup
+                                +icon('Calendar')
+                        .desc 
+                            .desc-zag Beyonce (Бейонсе)
+                            .item 
+                                .zag Тип артиста
+                                .val Сольник
+                            .item 
+                                .zag Жанр
+                                .val Pop
+                            .item 
+                                .zag Город
+                                .val Минск
+                            .item 
+                                .zag Страна
+                                .val Беларусь
+                            .item 
+                                .zag Начало карьеры
+                                .val 20.02.2016
+                    .card-main__content
+                        .content-zag Менеджмент, агентство и лейбл:
+                        .card-list 
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Менеджмент
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Имя агента
+                                        .val Федоренко Николай Васильевич
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Агенство
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Имя агента
+                                        .val Федоренко Николай Васильевич
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Лейбл
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Имя агента
+                                        .val Федоренко Николай Васильевич
+                .card-info(data-aos="fade-left") 
+                    .card-info__item.border-blue
+                        .info-zag Информация об артисте
+                        .info-desc Бейо́нсе Жизе́ль Но́улз-Картер, более известная просто как Бейо́нсе — американская певица в стиле R’n’B, актриса, танцовщица, музыкальный продюсер. Будучи ребёнком, участвовала в разных вокальных и танцевальных конкурсах, принимала участие в школьной художественной самодеятельности. Ноулз прославилась в конце 1990-х годов, будучи солисткой женской R&B-группы Destiny’s Child.
+                    .card-info__item.border-blue
+                        .text Минимальный гонорар: 
+                            span.blue 10 000 BYN
+                    .card-info__item.border-blue
+                        .text Регионы, в которых готов(а) работать: 
+                            span.blue РБ, Россия, Америка
+                    .card-info__item 
+                        .text.list Часовой пояс: 
+                            span.type EST
+                        .text.list Телефон: 
+                            span.type +375 (29) 635-89-78
+                        .text.list Социальная сеть: 
+                            a(href="#").type vk.com
+                        .text.list Социальная сеть: 
+                            a(href="#").type instagram
+                .card-auctions
+                    .zag Аукционы этого артиста
+                    .card-auctions__warn 
+                        .zag Авторизируйтесь или зарегестрируйтесь 
+                        span Для просмотра аукционов данного артиста Вам необходимо авторизоваться или зарегестрироваться!
+                        a(href="#").btn.btn-white Получить доступ
+            div С аукционами и зарегестрирован 
+            .card
+                .card-main(data-aos="fade-right") 
+                    .card-main__photo 
+                        .img 
+                            img(src="./img/content/card-photo.png")
+                            a(href="calendar.html").calendar.js-ajax-popup
+                                +icon('Calendar')
+                        .desc 
+                            .desc-zag Beyonce (Бейонсе)
+                            .item 
+                                .zag Тип артиста
+                                .val Сольник
+                            .item 
+                                .zag Жанр
+                                .val Pop
+                            .item 
+                                .zag Город
+                                .val Минск
+                            .item 
+                                .zag Страна
+                                .val Беларусь
+                            .item 
+                                .zag Начало карьеры
+                                .val 20.02.2016
+                    .card-main__content
+                        .content-zag Менеджмент, агентство и лейбл:
+                        .card-list 
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Менеджмент
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Имя агента
+                                        .val Федоренко Николай Васильевич
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Агенство
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Имя агента
+                                        .val Федоренко Николай Васильевич
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Лейбл
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Имя агента
+                                        .val Федоренко Николай Васильевич
+                .card-info(data-aos="fade-left")
+                    .card-info__item.border-blue
+                        .info-zag Информация об артисте
+                        .info-desc Бейо́нсе Жизе́ль Но́улз-Картер, более известная просто как Бейо́нсе — американская певица в стиле R’n’B, актриса, танцовщица, музыкальный продюсер. Будучи ребёнком, участвовала в разных вокальных и танцевальных конкурсах, принимала участие в школьной художественной самодеятельности. Ноулз прославилась в конце 1990-х годов, будучи солисткой женской R&B-группы Destiny’s Child.
+                    .card-info__item.border-blue
+                        .text Минимальный гонорар: 
+                            span.blue 10 000 BYN
+                    .card-info__item.border-blue
+                        .text Регионы, в которых готов(а) работать: 
+                            span.blue РБ, Россия, Америка
+                    .card-info__item 
+                        .text.list Часовой пояс: 
+                            span.type EST
+                        .text.list Телефон: 
+                            span.type +375 (29) 635-89-78
+                        .text.list Социальная сеть: 
+                            a(href="#").type vk.com
+                        .text.list Социальная сеть: 
+                            a(href="#").type instagram
+                        .text.list Сайт: 
+                            span.type Beyonce.com
+                    .card-info__item.__service
+                        span Вы можете отправить этому артисту 
+                            b предложение о сотрудничестве
+                        a(href="#").btn.btn-blue Заказать услугу                
+                .card-auctions
+                    .zag Аукционы этого артиста
+                    .card-auctions__items
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions1.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions2.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions3.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+
+
+                    
+

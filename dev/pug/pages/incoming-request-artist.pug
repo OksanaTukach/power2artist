@@ -1,0 +1,96 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Входящая заявка';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1 Входящая заявка: 1709200001
+        .request 
+            .container 
+                .form-container
+                    .val-items
+                        .form-group(data-aos="fade-down")
+                            +formVal('От какой компании предложение', 'ОАО "Медиа Лайф"') 
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Общая информация
+                            .form-group-items
+                                +formVal('Тип мероприятия', 'Сольный') 
+                                +formVal('Страна', 'Беларусь') 
+                                +formVal('Город', 'Минск') 
+                                +formVal('Дата', 'Сольный') 
+                                +formVal('Время выступления', '__:__') 
+                                +formVal('Длительность выступления', '__:__') 
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Условия
+                            .form-group-items
+                                .row
+                                    +formVal('Гонорар', '3000 BYN') 
+                                +formVal66('Доп. условия по гонорару', 'При переработке + 1000 BYN') 
+                                +formVal66('Расходы на стороне артиста', 'Визы, Доставка оборудования, Бэклайн, Визы, Доставка оборудования, Бэклайн, Визы, Доставка оборудования, Бэклайн') 
+                                +formVal66('Расходы на стороне промоутера', 'Сцена, Аренда площадки, Персонал') 
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Площадка
+                            .form-group-items 
+                                +formVal('Площадка', '“Динамо”') 
+                                +formVal('Адрес площадки', 'ул. Победы, 10') 
+                                +formVal('Сайт площадки', 'https://hcdinamo.by') 
+                                +formVal('Вместимость', '5000') 
+                                +formVal('Количество билетов в продаже', '5000') 
+                                +formVal('Количество сидячих/стоячих мест', '3000/2000') 
+                                +formVal('Средняя цена билета', '100 BYN') 
+                        .border
+                        .form-group(data-aos="fade-down")
+                            .form-group-items 
+                                +formVal66Text('Описание проекта', 'Выступление на открытой площадке. ЦА 18-20 лет')
+                        .val-items-zag Информация о заказчике
+                        .val-items-information(data-aos="fade-right")
+                            .request-img 
+                                img(src="./img/content/offer-for-artist.png")
+                            .desc
+                                .row 
+                                    +formVal('Название компании', 'Coca-cola') 
+                                    +formVal('Сайт компании', 'https://www.cocs-cola.com/') 
+                                .row 
+                                    +formVal('Страна', 'Беларусь') 
+                                    +formVal('Город', 'Минск') 
+                        .val-items-information(data-aos="fade-right")
+                            .request-img--anonymous 
+                                +icon('anonymous')
+                                .text Пользователь предпочел скрыть информацию о себе
+                        .border
+                        .row
+                            .documents(data-aos="fade-right")
+                                .documents-zag Прикрепленные документы
+                                .documents-items
+                                    +icon('download')
+                                    .documents-list
+                                        a(href="#") Устав.pdf
+                                        a(href="#") Приказ на директора.pdf
+                                        a(href="#") Свидетельство.jpg 
+                        .form-group(data-aos="fade-down")
+                            +textarea('Оставьте Ваш коментарий к входящей заявке', 'Напишите Ваш коментарий...')
+                        .row
+                            +btnBlue('Принять предложение')
+                            +btnBorder('Отклонить предложение')
+
+
+
+
+
+                    

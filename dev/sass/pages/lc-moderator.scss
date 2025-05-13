@@ -1,0 +1,114 @@
+.lc-tab__head-el {
+    .lc-num {
+        margin-left: toVw(10);
+        line-height: normal;
+        color: $blue;
+        border: 1px solid $blue;
+        border-radius: 25px;
+        padding: toVw(2) toVw(9);
+        font-size: toVw(11);
+    }
+}
+.lc-header {
+    
+    .lc-search {
+        width: toVw(320);
+        margin-right: toVw(40);
+        margin-top: toVw(22);
+        position: relative;
+        min-width: toVw(320);
+        &.--end {
+            margin-right: 0;
+            margin-left: auto;
+            @include md-block(){
+                margin-right: toVw(40);
+                margin-left: 0;
+            }
+        }
+        input {
+            border: none;
+            background-color: #F2FDFF;
+            border-radius: 3px;
+            width: 100%;
+            height: 100%;
+            padding: toVw(10) toVw(50);
+
+        }
+        .lc-search__icon {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            left: toVw(20);
+            .icon {
+                fill: $blue;
+                width: toVw(15);
+                height: toVw(15);
+            }
+        }
+    }
+}
+
+.lc-notify {
+    position: absolute;
+    max-width: toVw(230);
+    border: 1px solid $blue;
+    padding: toVw(10) toVw(30) toVw(13) toVw(11);
+    right: 0;
+    top: 0;
+    margin-right: toVw(65);
+    transform: translateY(0);
+    @include sm-block(){
+        position: static;
+        margin-left: auto;
+        margin-right: 0;
+        margin-bottom: toVw(25);
+        margin-top: toVw(-20);
+    }
+    @include xxs-block(){
+        margin-right: toVw(15);
+    }
+    &__close {
+        height: toVw(12);
+        width: toVw(12);
+        position: absolute;
+        cursor: pointer;
+        top: toVw(10);
+        right: toVw(11);
+        &::before, &::after {
+            content: '';
+            background-color: $blue;
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+        &::before {
+            transform: rotate(45deg);
+            top: 5px;
+        }
+        &::after {
+            transform:rotate(-45deg);
+            top: 5px;
+        }
+    }
+    &__title {
+        font-size: toVw(12);
+        opacity: 0.5;
+        margin-bottom: toVw(7);
+        line-height: 100%;
+    }
+    &__text {
+        font-size: toVw(12);
+        line-height: 120%;
+        a {
+            color: $blue;
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

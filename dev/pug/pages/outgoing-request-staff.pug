@@ -1,0 +1,52 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Исходящая заявка';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./libs/jquery.datepicker.extension.range.min.js")
+    script(src="./libs/multiple-select.js")
+    script(src="./js/fv.js")
+    script(src="./js/form.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1 Исходящая заявка: 1709200001
+        .request 
+            .container 
+                .form-container 
+                    form.request-form
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Общая информация
+                            .form-group-items
+                                +selectReq('Сфера деятельности', 'Продакшн')
+                                +selectReq('Страна', 'Беларусь')
+                                +selectReq('Город', 'Минск')
+                                +inputDate('Дата', '28.10.2020')
+                                +inputDateRange('Период', 'Например: с 28.10.2020 по 29.10.2020')
+                                +inputTime('Время')
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Условия
+                            .form-group-items
+                                +select('Тип занятости', 'Например: Полный')
+                                +inputDate('График работ', 'Например: с 09:00 до 18:00')
+                                +inputText('Опыт работ', 'Например: 10 лет')
+                                +inputTextReq('Максимальная цена за услугу', 'Например: 5000 BYN')
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Копии документов
+                            .form-group-items
+                                +addDocument('Копии документов')
+                        +check('Показать мои личные данные получателю заявки')
+                        +btnBlue('Отправить')

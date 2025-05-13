@@ -1,0 +1,596 @@
+mixin icon(name,mod)
+	- mod = mod || ''
+	svg(class="icon icon-" + name + ' ' + mod)
+		use(xlink:href="./img/svg/symbol/sprite.svg#" + name)
+
+mixin tooltip()
+	.tooltips
+		.tooltips__ico
+			+icon('tooltip')
+		.tooltips__val Прикрепите возможный перечень документов вашей компании
+mixin tooltipSpan()
+	span.tooltips
+		span.tooltips__ico
+			+icon('tooltip')
+		span.tooltips__val Прикрепите возможный перечень документов вашей компании
+
+
+//- Инпуты
+	Текстовые поля
+mixin inputTextReq(name,placeholder)
+	.form-item.required--input
+		label.zag
+			span= name
+				span.icon-req *
+		input(type="text" placeholder=""  + placeholder)
+mixin inputText(name,placeholder)
+	.form-item
+		label.zag
+			span= name
+		input(type="text" placeholder=""  + placeholder)
+
+
+	//- Широкое текстовое поле 66%
+mixin inputText66Req(name,placeholder)
+	.form-item.w66.required--input
+		label.zag
+			span= name
+				span.icon-req *
+		input(type="text" placeholder=""  + placeholder)
+mixin inputText66(name,placeholder)
+	.form-item.w66
+		label.zag
+			span= name
+		input(type="text" placeholder=""  + placeholder)
+
+
+
+
+
+	//- Ввод цифр 
+mixin inputNumReq(name,placeholder)
+	.form-item.required--input.num--inset
+		label.zag
+			span= name
+				span.icon-req *
+		input(type="text" placeholder=""  + placeholder)
+mixin inputNum(name,placeholder)
+	.form-item.num--inset
+		label.zag
+			span= name
+		input(type="text" placeholder=""  + placeholder)
+
+
+	//- Пароль 
+mixin inputPasswordReq(name)
+	.form-item.required--input
+		label.zag
+			span= name
+				span.icon-req *
+		input(type="password" minlength="4" maxlength="15")
+mixin inputPassword(name)
+	.form-item
+		label.zag
+			span= name
+		input(type="password" minlength="4" maxlength="15")
+
+
+
+
+	//- емаил 
+mixin inputEmailReq(name,placeholder)
+	.form-item.required--email
+		label.zag
+			span= name
+				span.icon-req *
+		input(type="email" placeholder=""  + placeholder)
+mixin inputEmail(name,placeholder)
+	.form-item.email-input-control
+		label.zag
+			span= name
+		input(type="email" placeholder=""  + placeholder)
+
+
+
+
+	//- Ввод времени 
+//- mixin inputTimeReq(name)
+//- 	.form-item
+//- 		label.zag
+//- 			span= name
+//- 				span.icon-req *
+//- 		input#time(type='text')
+//- 		+icon('clock-time')
+//- mixin inputTime(name)
+//- 	.form-item
+//- 		label.zag
+//- 			span= name
+//- 		input#time(type='text')
+//- 		+icon('clock-time')
+
+
+
+mixin inputTimeReq(name)
+	.form-item.input--mask--required
+		label.zag
+			span= name
+				span.icon-req *
+		input(type='text' data-placeholder='__ : __' data-mask="99 : 99")
+		+icon('clock-time')
+mixin inputTime(name)
+	.form-item.mask-input-control
+		label.zag
+			span= name
+		input(type='text' data-placeholder='__ : __' data-mask="99 : 99")
+		+icon('clock-time')
+
+	//- От и до 
+mixin inputPrice(name)
+	.form-item.price-double.num--inset
+		label.zag
+			span= name
+		.price-double__num
+			input(type='text' placeholder='От')
+			i.separator
+			input(type='text' placeholder='До')
+		.price-double__cur
+			select.styler
+				option BYN
+				option USD
+
+
+
+	//- Дата 
+mixin inputDateReq(name)
+	.form-item.required--date.input--mask--required
+		label.zag
+			span= name
+				span.icon-req *
+		input(type='text' class='date-picker' data-mask="99.99.9999" data-lang="ru" data-src='./img/svg/Calendar.svg' data-template='dd.mm.yy')
+mixin inputDate(name)
+	.form-item.input--mask
+		label.zag
+			span= name
+		input(type='text' class='date-picker' data-mask="99.99.9999" data-lang="ru" data-src='./img/svg/Calendar.svg' data-template='dd.mm.yy')
+
+
+
+	//- Двойная дата 
+mixin inputDateRangeReq(name)
+	.form-item.required--input.input--mask--required
+		label.zag
+			span= name
+				span.icon-req *
+		input(type='text' class="date_range" data-lang="ru" data-mask="99.99.9999-99.99.9999" data-template='dd.mm.yy' data-src='./img/svg/Calendar.svg')
+mixin inputDateRange(name)
+	.form-item.input--mask
+		label.zag
+			span= name
+		input(type='text' class="date_range" data-lang="ru" data-mask="99.99.9999-99.99.9999" data-template='dd.mm.yy' data-src='./img/svg/Calendar.svg')
+
+
+
+
+	//- Телефон 
+mixin inputTelReq()
+	.form-item.input--mask--required.js-phone._tel
+		label.zag 
+			span Телефон
+				span.icon-req *
+		.input-country
+			select.styler.no-style.js-value
+				option(data-mask='(99) 999-99-99' data-value='(99) 999-99-99' data-placeholder='(__) ' +
+				'___-__-__' ) by  +375
+				option(data-mask='(999) 999-99-99' data-value='(999) 999-99-99' data-placeholder='(___) ' +
+				'___-__-__') rus +7
+				option.no-mask Другая
+			input(type='tel' data-mask='(99) 999-99-99' data-placeholder='(__) ___-__-__' placeholder='(__) ___-__-__').input--main.js-value
+			input(type='tel').input--hidden
+
+
+
+//- mixin inputTel()
+//- 	.form-item.input--mask
+//- 		label.zag
+//- 			span Телефон
+//- 		input(data-mask="+375 (99) 999-99-99" type="tel" data-placeholder="+375 (__) ___-__-__" placeholder="+375 (__) ___-__-__")
+
+mixin inputTel()
+	.form-item.required.input--mask.js-phone._tel
+		label.zag 
+			span Телефон
+		.input-country__no-image
+			select.styler.no-style.js-value
+				option(data-mask='(99) 999-99-99' data-value='(99) 999-99-99' data-placeholder='(__) ' +
+				'___-__-__') by +375
+				option(data-mask='(999) 999-99-99' data-value='(999) 999-99-99' data-placeholder='(___) ' +
+				'___-__-__') rus +7
+				option.no-mask Другая
+			input(type='tel' data-mask='(99) 999-99-99' data-placeholder='(__) ___-__-__' placeholder='(__) ___-__-__').input--main.js-value
+			input(type='tel').input--hidden
+
+
+//- Селeкты
+
+mixin select2Req(name,option)
+	.form-item.required--select
+		label.zag
+			span= name
+				span.icon-req *
+		select.js-select2
+			option(disabled selected value="Not selected") Например:
+			option= option
+			option= option
+			option= option
+
+mixin selectReq(name,option)
+	.form-item.required--select
+		label.zag
+			span= name
+				span.icon-req *
+		select.styler
+			option(disabled selected value="Not selected") Например:
+			option= option
+			option= option
+			option= option
+mixin select(name,option)
+	.form-item
+		label.zag
+			span= name
+		select.styler
+			option(disabled selected value="Not selected") Например:
+			option= option
+			option= option
+			option= option
+
+mixin selectDoc(name,option)
+	.form-item.doc
+		label.zag
+			span= name
+		select.styler
+			option(disabled selected value="Not selected") Например:
+			option= option
+			option= option
+			option= option
+		a(href="#" download) Правила аукционов
+
+
+
+mixin inputSel(name)   
+	.form-item.required--input.num--inset._cur
+		label.zag
+			span= name 
+		.input-country
+			input(type='text' placeholder='5000')
+			i.separator
+			select.styler
+				option BYN
+				option USD	
+
+
+
+
+
+mixin inputSelImgReq(name)   
+	.form-item.required--input._social
+		label.zag
+			span= name 
+				span.icon-req *
+		.input-country
+			input(type='text' placeholder='Например: vk.beyonce.ru')
+			select.styler
+				option(data-img='./img/svg/vk.svg') Vk
+				option(data-img='./img/svg/Instagram.svg') Instagram
+				option(data-img='./img/svg/Facebook.svg') Facebook
+mixin inputSelImg(name)   
+	.form-item._social
+		label.zag
+			span= name 
+		.input-country
+			input(type='text' placeholder='Например: vk.beyonce.ru')
+			select.styler
+				option(data-img='./img/svg/vk.svg')
+				option(data-img='./img/svg/Instagram.svg')
+				option(data-img='./img/svg/Facebook.svg')
+
+
+
+
+
+mixin select-multReq(name)
+	.row.w66.js-select-mult
+		.form-item.required--select.select-mult
+			label.zag
+				span= name
+					span.icon-req *
+			select( class="multiple-select js-multiple-select" multiple displayTitle= "false")
+				option(disabled selected value="Not selected") Например:
+				option(value="1" data-text="Доставка оборудования") Доставка оборудования
+				option(value="2" data-text="Визы" ) Визы
+				option(value="3" data-text="Бэклайн") Бэклайн
+				option(value="4" data-text="Аренда площадки") Аренда площадки
+				option(value="5" data-text="Персонал") Персонал
+				option(value="6" data-text="Сцена") Сцена
+		.js-selected-list.selected-list
+mixin select-mult(name)
+	.row.w66.js-select-mult
+		.form-item.select-mult
+			label.zag
+				span= name
+			select( class="multiple-select js-multiple-select" multiple displayTitle= "false")
+				option(disabled selected value="Not selected") Например:
+				option(value="1" data-text="Доставка оборудования") Доставка оборудования
+				option(value="2" data-text="Визы" ) Визы
+				option(value="3" data-text="Бэклайн") Бэклайн
+				option(value="4" data-text="Аренда площадки") Аренда площадки
+				option(value="5" data-text="Персонал") Персонал
+				option(value="6" data-text="Сцена") Сцена
+		.js-selected-list.selected-list
+
+mixin select-mult66Req(name)
+	.row.js-select-mult
+		.form-item.w66.required--select.select-mult
+			label.zag
+				span= name
+					span.icon-req *
+			select( class="multiple-select js-multiple-select" multiple displayTitle= "false")
+				option(disabled selected value="Not selected") Например:
+				option(value="1" data-text="Доставка оборудования") Доставка оборудования
+				option(value="2" data-text="Визы" ) Визы
+				option(value="3" data-text="Бэклайн") Бэклайн
+				option(value="4" data-text="Аренда площадки") Аренда площадки
+				option(value="5" data-text="Персонал") Персонал
+				option(value="6" data-text="Сцена") Сцена
+		.js-selected-list.selected-list
+mixin select-mult66(name)
+	.row.js-select-mult
+		.form-item.w66.select-mult
+			label.zag
+				span= name
+			select( class="multiple-select js-multiple-select" multiple displayTitle= "false")
+				option(disabled selected value="Not selected") Например:
+				option(value="1" data-text="Доставка оборудования") Доставка оборудования
+				option(value="2" data-text="Визы") Визы
+				option(value="3" data-text="Бэклайн") Бэклайн
+				option(value="4" data-text="Аренда площадки") Аренда площадки
+				option(value="5" data-text="Персонал") Персонал
+				option(value="6" data-text="Сцена") Сцена
+		.js-selected-list.selected-list
+
+
+
+//- Кнопки
+
+mixin btnArrow(name)
+	button.btn.btn-blue.btn-arrow.required--sbmt= name
+		+icon('btn-arrow')
+mixin btnBlue(name)
+	button.btn.btn-blue.required--sbmt= name
+mixin btnBorder(name)
+	button.btn.btn-border.required--sbmt= name
+
+
+
+
+
+mixin btnWhite(name)
+	button.btn.btn-white= name
+mixin btnAdd(name)
+	button.btn.btn-add(type="button")
+		+icon('plus')
+		span= name
+mixin btnRemove(name)
+	button.btn.btn-add.__remove(type="button")
+		+icon('plus')
+		span= name
+
+mixin btnAddSocial(name)
+	button.btn.btn-add.js-add-social(type="button" data-max="3")
+		+icon('plus')
+		span= name
+mixin btnRemoveSocial(name)
+	button.btn.btn-add.__remove.js-remove-social(type="button")
+		+icon('plus')
+		span= name
+mixin btnAddBorder(name)
+	button.btn.btn-add-border(type="button")
+		+icon('plus2')
+		span= name
+mixin aAddBorder(name)
+	a(href="#").btn.btn-add-border
+		+icon('plus2')
+		span= name
+
+
+//- Дропдаун
+
+mixin dropdown(name,option)
+	.dropdown-zag
+		a.link(href="#")
+			span= name
+		a.js-dropdown-btn.dropdown-btn(href="#")
+			+icon('arrow-drop')
+	ul.drop
+		li
+			a(href="#")= option
+		li
+			a(href="#")= option
+		li
+			a(href="#")= option
+		li
+			a(href="#")= option
+		li
+			a(href="#")= option
+		li
+			a(href="#")= option
+		li
+			a(href="#")= option
+
+
+
+//- Textarea
+
+mixin textarea(name, placeholder)
+	.form-item.w66.--textarea
+		label.zag
+			span= name
+		textarea(rows="5" placeholder=""  + placeholder)
+mixin textarea100(name, placeholder)
+	.form-item.w100.--textarea
+		label.zag
+			span= name
+		textarea(rows="5" placeholder=""  + placeholder)
+
+		
+
+//- Добавление документов
+
+
+mixin addDocument(name)
+	.form-item.documents.w66.required--file--multiple(data-max="5")
+		label.zag
+			span.blue= name
+		input.styler(type="file" data-number="" data-placeholder="Выберите файл" multiple)
+		.doc-icon
+			+tooltip
+			+icon('download')
+		.input-file-info Документ должен быть не более 5 Мб
+	.input-file-list
+	
+mixin addDocument33(name)
+	.form-item.documents.required--file--multiple(data-max="5")
+		label.zag
+			span.blue= name
+		input.styler(type="file" data-number="" data-placeholder="Выберите файл" multiple)
+		.doc-icon
+			+tooltip
+			+icon('download')
+		.input-file-info Документ должен быть не более 5 Мб
+	.input-file-list
+	
+
+//- mixin addDocument(name)
+//- 	.form-item.w66.required--file--multiple.required
+//- 		label.zag
+//- 			span= name
+//- 		input.styler.js-add-document#file-selector(type="file" data-number="" data-placeholder="Выберите файл" multiple)
+
+
+//- Добавление фотографий
+mixin addPhoto()
+	.form-photo 
+		.form-photo--img 
+			img(src="./img/content/addPhoto.png")
+			input.styler(type="file" data-number="")
+			+icon('plus')
+		.input-file-info Документ должен быть не более 5 Мб
+mixin addPhoto2()
+	.form-photo.__circle 
+		.form-photo--img 
+			img(src="./img/content/offer-for-artist.png")
+			input.styler(type="file" data-number="")
+			+icon('plus')
+		.input-file-info Документ должен быть не более 5 Мб
+
+
+
+//- Чекбокс
+mixin check(value)
+	.form-item-check 
+		label
+			input.styler(type="checkbox")
+			span= value 
+mixin checkReq(value)
+	.form-item-check.required--check
+		label
+			input.styler(type="checkbox")
+			span= value 
+mixin checkTooltip(value)
+	.form-item-check 
+		label
+			input.styler(type="checkbox")
+			span= value
+				+tooltip 
+
+
+
+
+mixin radioReq(value, name)
+	.form-item-radio.radio--required
+		span.name= value
+			span.icon-req *
+		label 
+			input.styler(type="radio" name= name)
+			span Да
+		label 
+			input.styler(type="radio" name= name)
+			span Нет
+mixin radio(value, name)
+	.form-item-radio 
+		span.name= value
+		label 
+			input.styler(type="radio" name= name)
+			span Да
+		label 
+			input.styler(type="radio" name= name)
+			span Нет
+mixin radioCost(value, name)
+	.form-item-radio.js-radio-cost
+		span.name= value
+		label 
+			input.styler.js-open-cost(type="radio" name= name value="yes")
+			span Да
+		label 
+			input.styler(type="radio" name= name value="no")
+			span Нет
+			
+
+
+//- Заполненные поля
+mixin formValCur(name, value, cur)
+	.val-item.cur 
+		span.zag= name
+		.value= value
+		i.separator 
+		.cur= cur
+mixin formVal(name, value)
+	.val-item  
+		span.zag= name
+		.value= value
+mixin formValDate(name, value)
+	.val-item  
+		span.zag= name
+		.value= value
+			+icon('Calendar')
+mixin formValTime(name, value)
+	.val-item  
+		span.zag= name
+		.value= value
+			+icon('clock-time')
+mixin formVal66Text(name, value)
+	.val-item.w66.textarea 
+		span.zag= name
+		.value= value
+mixin formVal100Text(name, value)
+	.val-item.w100.textarea 
+		span.zag= name
+		.value= value
+mixin formVal66(name, value)
+	.val-item.w66  
+		span.zag= name
+		.value= value
+mixin formValRadio(name)
+	.val-item__radio
+		span.zag= name
+		.val-radio.checked 
+			span Да
+			.label-radio 
+		.val-radio
+			span Нет
+			.label-radio 
+
+
+
+
+
+

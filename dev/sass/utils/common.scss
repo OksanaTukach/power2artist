@@ -1,0 +1,252 @@
+$grid-columns: 12;
+@for $i from 1 through $grid-columns {
+	.col-#{$i}{
+		width: percentage($i / $grid-columns);
+	}
+}
+
+// Стили
+body {
+	font-family: $font;
+	font-weight: 400;
+	overflow: visible;
+	overflow-x: hidden;
+	line-height: 160%;
+	font-size: toVw($fontSizeMain);
+	margin: 0;
+	color: $black;
+	&._overflow{
+		overflow: hidden;
+	}
+	
+}
+main{
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+
+
+}
+.form-group-items__social select option{
+	font-size: 0;
+}
+.form-item._social .input-country .jq-selectbox li{
+	font-size: 0;
+}
+.bx-ios .form-group-items__social select option{
+	font-size: 16px;
+}
+body main{
+	.container{
+		padding-bottom: 50px;
+		.container{
+			padding-bottom: 0;
+		}
+	}
+}
+a{
+	text-decoration: none;
+	transition: .2s;
+	color: #131313;
+}
+img{
+	max-width: 100%;
+}
+.tabs__content {
+	display: none; /* по умолчанию прячем все блоки */
+}
+.tabs__content.active {
+	display: flex; /* по умолчанию показываем нужный блок */
+}
+
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	&.btn-blue {
+		border-radius: toVw(3);
+		font-size: toVw(16);
+		color: #FFFFFF;
+		background: $blue;
+		border: 1px solid $blue;
+		padding: toVw(20);
+		transition: .5s;
+		width: fit-content;
+		margin-top: toVw(40);
+		margin-bottom: toVw(70);
+		min-width: toVw(250);
+		@include xxs-block(){
+			width: 100%;
+		}
+		&:hover {
+			background: white;
+			color: $blue;
+		}
+	}
+	&.btn-border {
+		background: white;
+		border: 1px solid $blue;
+		color: $blue;
+		border-radius: toVw(3);
+		font-size: toVw(16);
+		padding: toVw(20);
+		width: fit-content;
+		margin-top: toVw(40);
+		margin-bottom: toVw(70);
+		min-width: toVw(250);
+		margin-left: toVw(30);
+		transition: .5s;
+		@include xxs-block(){
+			width: 100%;
+			margin-left: 0;
+		}
+		&:hover {
+			background: $blue;
+			color: white;
+		}
+	}
+	&.btn-arrow {
+		margin-top: toVw(45);
+		align-items: flex-end;
+		.icon {
+			margin-left: toVw(10);
+			transition: .5s;
+			fill: white;
+			width: toVw(20);
+			height: toVw(15);
+		}
+		&:hover {
+			.icon {
+				transform: translate(50%, 0);
+				fill: $blue;
+			}
+		}
+	}
+	&.btn-white {
+		font-size: toVw(16);
+		color:$blue;
+		background-color: white;
+		border: 1px solid white;
+		padding: toVw(13) toVw(40);
+		transition: .3s ease-in-out;
+
+	}
+
+}
+h1 {
+	font-weight: bold;
+	font-size: toVw(34);
+	color: #424242;
+	line-height: 130%;
+}
+.form-popup .btn.btn-arrow {
+	width: 100%;
+	margin-bottom: toVw(10);
+	margin-top: 0;
+}
+.form-popup .btn.btn-blue {
+	width: 100%;
+}
+.flex {
+	display: flex;
+	align-items: center;
+}
+
+
+
+// .container{
+// 	@include wrapper();
+// }
+.w100 {
+	width: 100%;
+}
+h1.favorites {
+	display: flex;
+	align-items: center;
+	.icon {
+		fill: $blue;
+		width: toVw(30);
+		height: toVw(28);
+		margin-left: toVw(20);
+	}
+}
+.hr {
+	width: 100%;
+	height: toVw(1);
+	background-color: #EFEFEF;
+}
+.btn-favorites {
+	border: none;
+	box-shadow: none;
+	cursor: pointer;
+}
+
+.select2 {
+	width: 100% !important;
+	height: 100%;
+	&.select2-container--open {
+		.select2-selection__arrow::before {
+			transform: rotateX(180deg);
+		}
+	}
+	.selection {
+		width: 100%;
+		height: 100%;
+		.select2-selection {
+			.select2-selection__arrow {
+				width: toVw(32);
+				height: toVw(25);
+				top: toVw(22);
+				right: toVw(3);
+				transition: .3s ease;
+				&::before {
+					content: '';
+					width: toVw(32);
+					height: toVw(25);
+					background-image: url(../img/content/arrow-input.png);
+					position: absolute;
+					left: 1px;
+					top: 1px;
+					background-repeat: no-repeat;
+					background-position: center;
+					transition: .3s ease-in-out;
+				}
+				b {
+					display: none;
+				}
+			}
+		}
+	}
+	.select2-selection {
+		width: 100%;
+		height: 100%;
+		border: none;
+		padding: toVw(22) toVw(10) toVw(20) toVw(25);
+	}
+	.select2-selection__rendered {
+		width: 100%;
+		height: 100%;
+	}
+	
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+	font-size: 14px;
+	display: flex;
+    align-items: center;
+}
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+	background-color: #93E9FC;
+}
+.select2-results__option {
+	padding: toVw(15) toVw(22);
+}
+.select2-container--default .select2-results__option--selected {
+	background-color: #93E9FC;
+	color: white;
+}
+
+.select2-dropdown {
+	outline: toVw(1) solid #9C9C9C;
+	border: none;
+}

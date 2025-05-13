@@ -1,0 +1,36 @@
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title Вы используете браузер Internet Explorer
+        link(rel="stylesheet" type='text/css' href="./css/main.css")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+    body
+        .page-ie
+            .container
+                a.page-ie__logo
+                    img(src="./img/ielogo.png" alt="")
+                .page-ie__text
+                    p Вы используете браузер Internet Explorer
+                    p Данный сайт построен на передовых, современных технологиях и не поддерживает Internet Explorer. Настоятельно рекомендуем выбрать и установить любой из современных браузеров. Это бесплатно и займет всего несколько минут
+                .page-ie__browser
+                    a.page-ie__browser-item(href="#")
+                        img(src="./img/safari.png" alt="")
+                        div Safari
+                    a.page-ie__browser-item(href="#")
+                        img(src="./img/opera.png" alt="")
+                        div Opera
+                    a.page-ie__browser-item(href="#")
+                        img(src="./img/firefox.png" alt="")
+                        div Mozilla Firefox
+                    a.page-ie__browser-item(href="#")
+                        img(src="./img/chrome.png" alt="")
+                        div Chrome
+                .page-ie__phones
+                    a(href="tel:7060") 7060 <br> <span>Контакт-центр</span>
+                    a(href="tel:80173977060") 8 (017) 397-70-60 <br> <span>Контакт-центр</span>
+                    a(href="tel:7110") 7110 <br> <span>По вопросам трудоустройства</span>
+                .page-ie__mail
+                    a(href="mailto:otzyvy@vitalur.by") otzyvy@vitalur.by

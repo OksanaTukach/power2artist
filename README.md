@@ -1,1 +1,2 @@
-# power2artist
+# Power2Artist
+

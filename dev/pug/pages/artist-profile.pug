@@ -1,0 +1,204 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Личный кабинет';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./libs/multiple-select.js")
+    script(src="./js/fv.js")
+    script(src="./js/form.js")
+    script(src="./js/lc-artist.js")
+    script(src="./js/profile.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1= title
+        .lc 
+            .container 
+                .lc-tab
+                    .lc-tab__head
+                        .lc-tab__head-item.js-lc-tab
+                            a.lc-tab__head-el.active(href="#")
+                                span Мои данные
+                            .menu-2lvl.js-menu-2lvl
+                                ul
+                                    li 
+                                        a(href="#").active
+                                            span  Персональные данные
+                                    li 
+                                        a(href="#")
+                                            span  Данные о компании
+                                    li 
+                                        a(href="#")
+                                            span  Данные о компании
+                        .lc-tab__head-item.js-lc-tab
+                            a.lc-tab__head-el(href="#")
+                                span Заявки
+                            .menu-2lvl.js-menu-2lvl
+                                ul
+                                    li 
+                                        a(href="#").active
+                                            span  Персональные данные
+                                    li 
+                                        a(href="#")
+                                            span  Данные о компании
+                                    li 
+                                        a(href="#")
+                                            span  Данные о компании
+                        .lc-tab__head-item.js-lc-tab
+                            a.lc-tab__head-el(href="#")
+                                span Аукционы
+                    .lc-tab__body.js-lc-tab__body
+                        .lc-tab__body-el
+                            .form-container 
+                                form.lc-form
+                                    .lc-tab-zag Персональные данные артиста
+                                    .row.--photo
+                                        include ../modules/artist-profile-note 
+                                        .request-img 
+                                            img(src="./img/content/offer-for-artist.png")
+                                            
+                                        .lc-info 
+                                            .row 
+                                                +inputTextReq('Имя артиста', 'Например: Beyonce')
+                                                +selectReq('Страна', 'Беларусь')
+                                            .row 
+                                                +selectReq('Город', 'Минск')
+                                                +inputTel() 
+                                            
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items
+                                            +selectReq('Тип артиста', 'Сольник')
+                                            +select-multReq('Жанр')
+                                    .border
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items
+                                            +inputDateReq('Начало карьеры', '20.10.2016')
+                                            +selectReq('Часовой пояс', 'EST')
+                                            +inputText('Сайт', 'Например: Beyonce.com')
+                                            .form-group-items__social
+                                                .social-item.js-social-item
+                                                    +inputSelImgReq('Социальные сети')
+                                                    +btnAddSocial('Добавить новую социальную сеть')
+                                                    +btnRemoveSocial('Удалить социальную сеть')
+                                    .border
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items
+                                            +textarea100('Расскажите о себе', 'Напишите информацию о себе')
+                                            +radioReq('Менеджмент', 'management')
+                                            +radioReq('Агенство', 'agency')
+                                            .row
+                                                +inputText('Имя агента', 'Например:Николай')
+                                                +inputTel()
+                                                +inputEmail('Email агента', 'Например: info@mail.ru')
+                                            +radioReq('Лейбл', 'label')
+                                            .row
+                                                +inputTextReq('Минимальный гонорар', 'Например: 1000')
+                                                +select-mult('Валюта сделок')
+                                    .border
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items
+                                            +select-mult66Req('Какую информацию хотите получать')
+                                    .border
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items
+                                            +select-mult66Req('Какую информацию хотите получать')
+                                    .border
+                                    +check('Показать мои личные данные получателю заявки')
+                                    +btnBlue('Сохранить данные')
+                        .lc-tab__body-el
+                            .form-container 
+                                form.lc-form
+                                    .lc-tab-head
+                                        .lc-tab-zag Персональные данные компании
+                                        +btnAdd('Добавить новую компанию')
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items
+                                            .row 
+                                                +selectReq('Страна', 'Россия')
+                                                +inputTextReq('Наименование', 'ОАО “ТимЛайн”')
+                                            .row 
+                                                +selectReq('Тип лица', 'Юридическое лицо')
+                                                +selectReq('Форма собственности', 'ИП')
+                                            .row 
+                                                +inputTextReq('ФИО представителя', 'Например: Пономаренко Николай Сергеевич')
+                                                +inputTelReq()
+                                            .row 
+                                                +inputTextReq('Адрес регистрации', 'Например: ул. Независимости 39')
+                                                +inputTextReq('Почтовый адрес', 'Например: ул. Независимости 39')
+                                            .row 
+                                                +inputTextReq('Номер свидетельства о регистрации', 'Например: №3689')
+                                                +inputDateReq('Дата свидетельства о регистрации')
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-zag Налоговая информация
+                                        .form-group-items
+                                            .row
+                                                +inputTextReq('ОГРНИП', 'С ГГ КК ХХХХХХХХХ Ч')
+                                                +inputTextReq('ИНН', 'Например: 3664069397')
+                                            .row
+                                                +inputTextReq('КПП', 'Например: 569847889')
+                                                +inputTextReq('ОКПО', 'Например: 36356869')
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-zag Банковская информация
+                                        .form-group-items
+                                            +inputTextReq('Наименование банка', 'Например: Альфа-банк')
+                                            +inputTextReq('Адрес банка', 'Например: пр-т Независимости 35')
+                                            +inputTextReq('Номер счета', 'Например: пр-т Независимости 35 ')
+                                            +selectReq('Валюта счета', 'BYN')
+                                            +inputTextReq('SWIF', 'AKBBBY2X')
+                                            +inputTextReq('BIC', 'Например: 044525225')
+                                            +inputTextReq('Наименование банка корреспондента', 'Например: Белгазпромбанк')
+                                            +inputTextReq('BIC код банка корреспондента', 'Например: 044525225')
+                                            +inputTextReq('Номер счета банка корреспондента', 'Например: 0835-0902029-13-010')
+                                    .border
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-zag Копии документов
+                                        .form-group-items
+                                            +addDocument('Копии документов')
+                                            .row 
+                                                +addPhoto()
+                                    .row
+                                        +btnBlue('Сохранить данные')
+                                        +btnBorder('Отменить редактирование')
+                        .lc-tab__body-el
+                            .calendar
+                                .calendar-zag Календарь занятости
+                                .calendar-date
+                                    .js-datepicker(data-lang="ru")
+                                .calendar-time
+                                    .calendar-time__zag Выберите время Вашей занятости
+                                    .calendar-time__items 
+                                        .form-item.time-double.mask-input-control
+                                            input(type='text' data-placeholder='__ : __' placeholder='С 06:00' data-mask="99 : 99")
+                                            i.separator
+                                            input(type='text' data-placeholder='__ : __' placeholder='До 12:00' data-mask="99 : 99")
+                                        .form-item.time-double.mask-input-control
+                                            input(type='text' data-placeholder='__ : __' placeholder='С 06:00' data-mask="99 : 99")
+                                            i.separator
+                                            input(type='text' data-placeholder='__ : __' placeholder='До 12:00' data-mask="99 : 99")
+                                        button.btn.btn-add(type="button")
+                                            +icon('plus')
+                                    +check('Занят весь день')
+                                    .row 
+                                        +btnBlue('Сохранить')
+                                        +btnBorder('Очистить')
+                                .calendar-footer
+                                    +check('Отображать на сайте')
+                                    .row 
+                                        +btnBlue('Сохранить')
+                                        +btnBorder('Очистить')                                            
+                        .lc-tab__body-el
+                        .lc-tab__body-el
+

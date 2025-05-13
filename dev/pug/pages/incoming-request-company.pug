@@ -1,0 +1,96 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Входящая заявка';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1 Входящая заявка: 1709200001
+        .request 
+            .container 
+                .form-container
+                    .val-items
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Общая информация
+                            .form-group-items
+                                .row
+                                    +formVal('Страна', 'Беларусь') 
+                                    +formVal('Город', 'Минск') 
+                                .row 
+                                    +formVal('Дата заезда', '28.10.2020') 
+                                    +formVal('Дата отъезда', '29.10.2020') 
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Информация об отеле
+                            .form-group-items
+                                +formVal('Тип размещения', 'Двухместное') 
+                                +formVal('Категория отеля', 'Премиум') 
+                                +formVal('Категория номера', 'Люкс') 
+                                .row
+                                    +formVal('Количество номеров', 'Один')
+                                    +formVal('Количество кроватей', 'Две')  
+                                .row
+                                    +formVal('Ранний заезд', 'Да')
+                                    +formVal('Поздний выезд', 'Нет')  
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Дополнительные критерии
+                            .form-group-items
+                                +formVal('Круглосуточный рум-сервис', 'Да') 
+                                +formVal('Парковка', 'Да') 
+                                +formVal('Ресторан', 'Нет') 
+                                +formVal('Фитнес-центр', 'Нет') 
+                                +formVal('Спа', 'Да') 
+                                +formVal('Бассейн', 'Да') 
+                                +formVal('Разрешено ли курение в номерах', 'Да') 
+                                +formVal('Размещение домашних животных', 'Да') 
+                                +formVal('Тип оплаты', 'Банковская карточка') 
+                        .val-items-zag Информация о заказчике
+                        .val-items-information(data-aos="fade-right")
+                            .request-img 
+                                img(src="./img/content/offer-for-artist.png")
+                            .desc
+                                .row 
+                                    +formVal('Название компании/ Имя', 'Beyonce') 
+                                    +formVal('Сайт компании', 'https://www.cocs-cola.com/') 
+                                .row 
+                                    +formVal('Страна', 'Беларусь') 
+                                    +formVal('Город', 'Минск') 
+                        .val-items-information(data-aos="fade-right")
+                            .request-img--anonymous 
+                                +icon('anonymous')
+                                .text Пользователь предпочел скрыть информацию о себе
+                        .border
+                        .row
+                            .documents(data-aos="fade-right")
+                                .documents-zag Прикрепленные документы
+                                .documents-items
+                                    +icon('download')
+                                    .documents-list
+                                        a(href="#") Устав.pdf
+                                        a(href="#") Приказ на директора.pdf
+                                        a(href="#") Свидетельство.jpg 
+                        .border
+                        .form-group(data-aos="fade-down")
+                            +textarea('Оставьте Ваш коментарий к входящей заявке', 'Напишите Ваш коментарий...')
+                        .row
+                            +btnBlue('Принять предложение')
+                            +btnBorder('Отклонить предложение')
+
+
+
+
+
+                    

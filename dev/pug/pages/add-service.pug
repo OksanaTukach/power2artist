@@ -1,0 +1,45 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Добавление услуги';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./libs/multiple-select.js")
+    script(src="./js/fv.js")
+    script(src="./js/form.js")
+
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1= title
+        .add-service
+            .container 
+                .form-container 
+                    form.add-service-form
+                        .form-group(data-aos="fade-down")
+                            .form-group-items
+                                +inputTextReq('Название услуги', 'Например: Аренда площадки')
+                                +selectReq('Тип заяки', 'Купить услугу')
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Общая информация
+                            .form-group-items
+                                +selectReq('Страна', 'Беларусь')
+                                +select('Регион', 'Минская обсласть')
+                                +select('Город', 'Минск')
+                                +inputTextReq('Название компании', 'Например:Альфа')
+                                +inputText('Сайт компании', 'Напрмиер: Alfa.com')
+                                +textarea('Описание услуги', 'Напрмиер: любой пользователь может арендовать площадку ')
+                        span.add-service-form__mark *Ваша заявка на создание услуги будет отправлена на модерацию. Если услуга пройдет модерацию, то она будет доступна в системе. Появится доступ к ее редактированию в Вашем личном кабинете.
+                        +btnBlue('Отправить')

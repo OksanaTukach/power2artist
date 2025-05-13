@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ab3de03e-5749-4fbc-9d04-637d5ad03c31" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/dev/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/libs/libsMin/aos.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/libs/libsMin/aos.js" beforeDir="false" />
+=======
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/dev/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/js/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/sass/modules/auction/auction-info.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dev/sass/modules/auction/auction-info.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/sass/modules/breadcrums.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dev/sass/modules/breadcrums.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/sass/pages/card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dev/sass/pages/card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/sass/pages/offer_for_artist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dev/sass/pages/offer_for_artist.scss" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/dev/js/fv.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/js/fv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/sass/pages/request.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dev/sass/pages/request.scss" afterDir="false" />
+>>>>>>> 0e28e1b1c4756ae02aaba55e049e8f2fd28aafaa
+>>>>>>> 2ceee3f68db61b979f87f4f07c33c073d076d5f4
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Pug File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1WCg9KKrZksSBQQXFvVu3hoSBi7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../scaner" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+    <property name="ts.external.directory.path" value="W:\Installed\PhpStorm 2020.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="W:\Project\ml-front-end_starter\dev\libs\libsMin" />
+      <recent name="W:\Progects\ml-front-end_starter\dev\libs" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="W:\Project\power2artist\dev\pug\pages" />
+      <recent name="W:\Project\ml-front-end_starter\dev\pug\modules" />
+      <recent name="W:\Project\ml-front-end_starter\dev\sass\utils" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ab3de03e-5749-4fbc-9d04-637d5ad03c31" name="Default Changelist" comment="" />
+      <created>1578658837013</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578658837013</updated>
+      <workItem from="1578658838079" duration="694000" />
+      <workItem from="1583738055666" duration="1180000" />
+      <workItem from="1584180757017" duration="168000" />
+      <workItem from="1588614115545" duration="1488000" />
+      <workItem from="1592467176062" duration="2984000" />
+      <workItem from="1595574520132" duration="193000" />
+      <workItem from="1598008144612" duration="1866000" />
+      <workItem from="1598427021838" duration="1882000" />
+      <workItem from="1598509043525" duration="142000" />
+      <workItem from="1603193385773" duration="416000" />
+      <workItem from="1617025414449" duration="1847000" />
+      <workItem from="1631260989561" duration="3373000" />
+      <workItem from="1631774720243" duration="4258000" />
+      <workItem from="1631860516911" duration="2867000" />
+      <workItem from="1636614154420" duration="73000" />
+      <workItem from="1637847299179" duration="3781000" />
+      <workItem from="1637908437515" duration="1189000" />
+      <workItem from="1637922597675" duration="1786000" />
+      <workItem from="1637933296343" duration="270000" />
+      <workItem from="1637935418127" duration="1189000" />
+      <workItem from="1638168759803" duration="671000" />
+<<<<<<< HEAD
+      <workItem from="1640083774377" duration="946000" />
+      <workItem from="1643095690179" duration="2393000" />
+=======
+      <workItem from="1640083774377" duration="645000" />
+      <workItem from="1641373219807" duration="10931000" />
+      <workItem from="1641387975436" duration="1802000" />
+      <workItem from="1641457193527" duration="581000" />
+<<<<<<< HEAD
+      <workItem from="1641582673983" duration="1579000" />
+      <workItem from="1641809249987" duration="5000" />
+      <workItem from="1641840080986" duration="10000" />
+      <workItem from="1673429545193" duration="8507000" />
+=======
+      <workItem from="1641582673983" duration="1194000" />
+>>>>>>> 0e28e1b1c4756ae02aaba55e049e8f2fd28aafaa
+>>>>>>> 2ceee3f68db61b979f87f4f07c33c073d076d5f4
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+<<<<<<< HEAD
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1673437062788">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1673437062788" />
+    <state x="-1266" y="252" width="611" height="536" key="find.popup" timestamp="1673430111266">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1266" y="252" width="611" height="536" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1673430111266" />
+=======
+    <state x="713" y="178" key="#SCSS" timestamp="1637848579742">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="713" y="178" key="#SCSS/1920.0.1920.1032/0.0.1920.1032@0.0.1920.1032" timestamp="1637848579742" />
+    <state x="-1180" y="275" key="FileChooserDialogImpl" timestamp="1641385552860">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1180" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1641385552860" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1641380136363" />
+    <state x="740" y="273" key="FileChooserDialogImpl/1920.0.1920.1032/0.0.1920.1032@0.0.1920.1032" timestamp="1638170633339" />
+    <state x="2660" y="273" key="FileChooserDialogImpl/1920.0.1920.1032/0.0.1920.1032@1920.0.1920.1032" timestamp="1636614231007" />
+<<<<<<< HEAD
+    <state x="668" y="237" width="583" height="562" key="find.popup" timestamp="1643097279978">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="668" y="237" width="583" height="562" key="find.popup/1920.0.1920.1032/0.0.1920.1032@0.0.1920.1032" timestamp="1643097279978" />
+=======
+    <state x="668" y="239" width="809" height="567" key="find.popup" timestamp="1641584160322">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1252" y="239" width="809" height="567" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1641582772917" />
+    <state x="668" y="239" width="809" height="567" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1641584160322" />
+    <state x="668" y="237" width="583" height="562" key="find.popup/1920.0.1920.1032/0.0.1920.1032@0.0.1920.1032" timestamp="1640084315423" />
+>>>>>>> 0e28e1b1c4756ae02aaba55e049e8f2fd28aafaa
+>>>>>>> 2ceee3f68db61b979f87f4f07c33c073d076d5f4
+  </component>
+</project>

@@ -1,0 +1,69 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Исходящая заявка';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./libs/multiple-select.js")
+    script(src="./js/fv.js")
+    script(src="./js/form.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1 Исходящая заявка: 1709200001
+        .request 
+            .container 
+                .form-container 
+                    form.request-form
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Общая информация
+                            .form-group-items
+                            .row
+                                +selectReq('Страна', 'Беларусь')
+                                +selectReq('Город', 'Минск')
+                            .row
+                                +inputDate('Дата заезда', '28.10.2020')
+                                +inputDate('Дата отъезда', '28.10.2020')
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Информация об отеле
+                            .form-group-items
+                                +selectReq('Тип размещения', 'Двухместное')
+                                +selectReq('Категория отеля', 'Премиум')
+                                +selectReq('Категория номера', 'Люкс')
+                            .row
+                                +inputText('Количество номеров', 'Например: один')
+                                +inputText('Количество кроватей', 'Например: две')
+                            .row
+                                +selectReq('Ранний заезд', 'Да')
+                                +selectReq('Ранний выезд', 'Нет')
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Дополнительные критерии
+                            .form-group-items
+                                +selectReq('Круглосуточный рум-сервис', 'Да')
+                                +selectReq('Парковка', 'Да')
+                                +selectReq('Ресторан', 'Нет')
+                                +selectReq('Фитнес-центр', 'Нет')
+                                +selectReq('Спа', 'Да')
+                                +selectReq('Бассейн', 'Да')
+                                +selectReq('Разрешено ли курение в номерах', 'Да')
+                                +selectReq('Размещение домашних животных', 'Нет')
+                                +selectReq('Тип оплаты', 'Банковская карточка')
+                        .border
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Копии документов
+                            .form-group-items
+                            +addDocument('Копии документов')
+                        +check('Показать мои личные данные получателю заявки')
+                        +btnBlue('Отправить')

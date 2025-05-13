@@ -1,0 +1,316 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Артисты';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./libs/multiple-select.js")
+    script(src="./js/fv.js")
+    script(src="./js/lc-artist.js")
+    script(src="./js/form.js")
+
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1= title
+        .artists 
+            .container
+                form.filter   
+                    +inputText('Имя артиста', 'Например: Beyonce') 
+                    +select('Тип артиста', 'Сольник') 
+                    +select('Жанр', 'Pop') 
+                    +select('Страна', 'Беларусь') 
+                    +select('Город', 'Минск') 
+                    +select('Регионы в которых готовы работать', 'Минская область') 
+                    a(href="#").clear-filter Очистить фильтр
+                .artists-items
+                    .artist-item
+                        .artist-img 
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/artist-photo1.png')")
+                            a(href="calendar.html").calendar.js-ajax-popup
+                                +icon('Calendar')
+                        .artist-content 
+                            a.artist-btn(href="#")
+                                +icon('artist-btn-arrow')
+                            .artist-content__zag Beyonce 
+                            .artist-content__item 
+                                span.zag Регион: 
+                                span.val Минская
+                        .artist-link
+                            a(href="#").btn.btn-blue Отправить предложение 
+                    .artist-item
+                        .artist-img 
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/artist-photo2.png')")
+                            a(href="calendar.html").calendar.js-ajax-popup
+                                +icon('Calendar')
+                        .artist-content 
+                            a.artist-btn(href="#")
+                                +icon('artist-btn-arrow')
+                            .artist-content__zag Linkin Park
+                            .artist-content__item 
+                                span.zag Регион:
+                                span.val Минская 
+                            .artist-content__item 
+                                span.zag Страна:
+                                span.val Беларусь
+                            .artist-content__item 
+                                span.zag Город:
+                                span.val Минск
+                            .artist-content__item 
+                                span.zag Жанр:
+                                span.val Поп
+                            .artist-content__item
+                                span.zag Страна:
+                                span.val Беларусь
+                            .artist-content__item
+                                span.zag Город:
+                                span.val Минск
+                            .artist-content__item
+                                span.zag Жанр:
+                                span.val Поп
+                        .artist-link
+                            a(href="#").btn.btn-blue Отправить предложение 
+                    .artist-item
+                        .artist-img 
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/artist-photo3.png')")
+                            a(href="calendar.html").calendar.js-ajax-popup
+                                +icon('Calendar')
+                        .artist-content 
+                            a.artist-btn(href="#")
+                                +icon('artist-btn-arrow')
+                            .artist-content__zag Three Days Greys 
+                            .artist-content__item 
+                                span.zag Регион:
+                                span.val Минская 
+                            .artist-content__item 
+                                span.zag Страна:
+                                span.val Беларусь
+                            .artist-content__item 
+                                span.zag Город:
+                                span.val Минск
+                            .artist-content__item 
+                                span.zag Жанр:
+                                span.val Поп
+                        .artist-link
+                            a(href="#").btn.btn-blue Отправить предложение 
+                    .artist-item
+                        .artist-img 
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/artist-photo1.png')")
+                            a(href="calendar.html").calendar.js-ajax-popup
+                                +icon('Calendar')
+                        .artist-content 
+                            a.artist-btn(href="#")
+                                +icon('artist-btn-arrow')
+                            .artist-content__zag Beyonce
+                        .artist-link
+                            a(href="#").btn.btn-blue Отправить предложение 
+                    .artist-item
+                        .artist-img 
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/artist-photo2.png')")
+                            a(href="calendar.html").calendar.js-ajax-popup
+                                +icon('Calendar')
+                        .artist-content 
+                            a.artist-btn(href="#")
+                                +icon('artist-btn-arrow')
+                            .artist-content__zag Linkin Park
+                            .artist-content__item 
+                                span.zag Регион:
+                                span.val Минская 
+                            .artist-content__item 
+                                span.zag Страна:
+                                span.val Беларусь
+                            .artist-content__item 
+                                span.zag Город:
+                                span.val Минск
+                            .artist-content__item 
+                                span.zag Жанр:
+                                span.val Поп
+                        .artist-link
+                            a(href="#").btn.btn-blue Отправить предложение 
+                    .artist-item
+                        .artist-img 
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/artist-photo3.png')")
+                            a(href="calendar.html").calendar.js-ajax-popup
+                                +icon('Calendar')
+                        .artist-content 
+                            a.artist-btn(href="#")
+                                +icon('artist-btn-arrow')
+                            .artist-content__zag Three Days Greys 
+                            .artist-content__item 
+                                span.zag Регион:
+                                span.val Минская 
+                            .artist-content__item 
+                                span.zag Страна:
+                                span.val Беларусь
+                            .artist-content__item 
+                                span.zag Город:
+                                span.val Минск
+                            .artist-content__item 
+                                span.zag Жанр:
+                                span.val Поп
+                        .artist-link
+                            a(href="#").btn.btn-blue Отправить предложение 
+                    .artist-item
+                        .artist-img 
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/artist-photo1.png')")
+                            a(href="calendar.html").calendar.js-ajax-popup
+                                +icon('Calendar')
+                        .artist-content 
+                            a.artist-btn(href="#")
+                                +icon('artist-btn-arrow')
+                            .artist-content__zag Beyonce 
+                            .artist-content__item 
+                                span.zag Регион: 
+                                span.val Минская 
+                            .artist-content__item 
+                                span.zag Страна: 
+                                span.val Беларусь
+                            .artist-content__item 
+                                span.zag Город: 
+                                span.val Минск
+                            .artist-content__item 
+                                span.zag Жанр: 
+                                span.val Поп
+                        .artist-link
+                            a(href="#").btn.btn-blue Отправить предложение 
+                    .artist-item
+                        .artist-img 
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/artist-photo2.png')")
+                            a(href="calendar.html").calendar.js-ajax-popup
+                                +icon('Calendar')
+                        .artist-content 
+                            a.artist-btn(href="#")
+                                +icon('artist-btn-arrow')
+                            .artist-content__zag Linkin Park
+                            .artist-content__item 
+                                span.zag Регион:
+                                span.val Минская 
+                            .artist-content__item 
+                                span.zag Страна:
+                                span.val Беларусь
+                            .artist-content__item 
+                                span.zag Город:
+                                span.val Минск
+                            .artist-content__item 
+                                span.zag Жанр:
+                                span.val Поп
+                        .artist-link
+                            a(href="#").btn.btn-blue Отправить предложение 
+                    .artist-item
+                        .artist-img 
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/artist-photo3.png')")
+                            a(href="calendar.html").calendar.js-ajax-popup
+                                +icon('Calendar')
+                        .artist-content 
+                            a.artist-btn(href="#")
+                                +icon('artist-btn-arrow')
+                            .artist-content__zag Three Days Greys 
+                            .artist-content__item 
+                                span.zag Регион:
+                                span.val Минская 
+                            .artist-content__item 
+                                span.zag Страна:
+                                span.val Беларусь
+                            .artist-content__item 
+                                span.zag Город:
+                                span.val Минск
+                            .artist-content__item 
+                                span.zag Жанр:
+                                span.val Поп
+                        .artist-link
+                            a(href="#").btn.btn-blue Отправить предложение 
+                    .artist-item
+                        .artist-img 
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/artist-photo1.png')")
+                            a(href="calendar.html").calendar.js-ajax-popup
+                                +icon('Calendar')
+                        .artist-content 
+                            a.artist-btn(href="#")
+                                +icon('artist-btn-arrow')
+                            .artist-content__zag Beyonce 
+                            .artist-content__item 
+                                span.zag Регион: 
+                                span.val Минская 
+                            .artist-content__item 
+                                span.zag Страна: 
+                                span.val Беларусь
+                            .artist-content__item 
+                                span.zag Город: 
+                                span.val Минск
+                            .artist-content__item 
+                                span.zag Жанр: 
+                                span.val Поп
+                        .artist-link
+                            a(href="#").btn.btn-blue Отправить предложение 
+                    .artist-item
+                        .artist-img 
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/artist-photo2.png')")
+                            a(href="calendar.html").calendar.js-ajax-popup
+                                +icon('Calendar')
+                        .artist-content 
+                            a.artist-btn(href="#")
+                                +icon('artist-btn-arrow')
+                            .artist-content__zag Linkin Park
+                            .artist-content__item 
+                                span.zag Регион:
+                                span.val Минская 
+                            .artist-content__item 
+                                span.zag Страна:
+                                span.val Беларусь
+                            .artist-content__item 
+                                span.zag Город:
+                                span.val Минск
+                            .artist-content__item 
+                                span.zag Жанр:
+                                span.val Поп
+                        .artist-link
+                            a(href="#").btn.btn-blue Отправить предложение 
+                    .artist-item
+                        .artist-img 
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/artist-photo3.png')")
+                            a(href="calendar.html").calendar.js-ajax-popup
+                                +icon('Calendar')
+                        .artist-content 
+                            a.artist-btn(href="#")
+                                +icon('artist-btn-arrow')
+                            .artist-content__zag Three Days Greys 
+                            .artist-content__item 
+                                span.zag Регион:
+                                span.val Минская 
+                            .artist-content__item 
+                                span.zag Страна:
+                                span.val Беларусь
+                            .artist-content__item 
+                                span.zag Город:
+                                span.val Минск
+                            .artist-content__item 
+                                span.zag Жанр:
+                                span.val Поп
+                        .artist-link
+                            a(href="#").btn.btn-blue Отправить предложение 
+                include ../modules/pagination
+

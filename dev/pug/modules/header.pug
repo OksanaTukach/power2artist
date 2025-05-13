@@ -1,0 +1,50 @@
+header.header
+    .header-container
+        .header-top
+            .header-logo 
+                img(src="./img/content/header-logo-mob.png")
+            .header-menu.js-header-menu
+                ul
+                    li.active
+                        a(href="#")
+                            span О проекте
+                    li
+                        a(href="#")
+                            span Регламент
+                    li
+                        a(href="#")
+                            span Аукционы
+                    li
+                        a(href="#")
+                            span Заявки
+            .header-burger.js-header-burger
+                +icon('header-burger')
+            .header-menu__right
+                .header-btn.js-header-btn
+                    +aAddBorder('Разместить лот')
+                    +aAddBorder('Подать заявку')
+                    .header-lang
+                        .header-lang__main
+                            span RU
+                            +icon('ar-bot')
+                        ul.header-lang__list
+                            li
+                                a(href='#') EN
+                            li.active
+                                a(href='#') RU
+                            li
+                                a(href='#') BY
+                .header-lc.js-header-lc
+                    a(href="#").img
+                        +icon('lc-icon')
+                    .content
+                        .header-lc--open Личный кабинет
+                            .header-lc--num 68
+                        a(href="#").header-lc--exit Выход
+                //- .header-lc-entrance.js-header-lc
+                //-     a(href="#").lc-entrance
+                //-         span.label уже зарегестрированы
+                //-         .zag Вход в личный кабинет
+
+
+        

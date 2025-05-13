@@ -1,0 +1,170 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Личный кабинет';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./libs/multiple-select.js")
+    script(src="./js/fv.js")
+    script(src="./js/form.js")
+    script(src="./js/profile.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1= title
+        .lc 
+            .container
+                .lc-tab.js-lc-tab 
+                    .lc-tab__head
+                        a.lc-tab__head-el.active(href="#")
+                            span Мои данные
+                        a.lc-tab__head-el(href="#")
+                            span Заявки
+                        a.lc-tab__head-el(href="#")
+                            span Аукционы
+                    .lc-tab__body
+                        .lc-tab__body-el
+                            .form-container 
+                                form.lc-form
+                                    .lc-tab-zag Персональные данные компании
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items
+                                            +inputTextReq('Название компании', 'Например: ОАО “Кока  Кола”')
+                                            +inputText('Сайт компании', 'Например: Coka-cola.com')
+                                            +selectReq('Страна', 'Беларусь')
+                                            +inputText('Название бренда', 'Например: Кока Кола')
+                                            +inputEmailReq('Email', 'Например: info@mail.ru')
+                                            +inputTel()
+                                    .border 
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items
+                                            +select-mult66Req('Сфера деятельности')
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-zag Контакты ответственного лица за Продюсирование
+                                        .form-group-items
+                                            +inputTextReq('Имя', 'Например: Елизавета')
+                                            +inputEmailReq('Email', 'Например: info@mail.ru')
+                                            +inputTel()
+                                    .border
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-zag Контакты ответственного лица за Продакш
+                                        .form-group-items
+                                            +inputTextReq('Имя', 'Например: Елизавета')
+                                            +inputEmail('Email', 'Например: info@mail.ru')
+                                            +inputTel()
+                                    .border 
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items
+                                            +select-mult66Req('Перечень оказываемых услуг')
+                                            +radioCost('Указать стоимость услуги', 'cost')
+                                    .lc-form--cost.js-lc-cost
+                                        .form-group
+                                            .form-group-zag Продюсирование
+                                            .form-group-items
+                                                +inputText('Стоимость услуги', 'Например: 900 BYN')
+                                                +addDocument33('Тарифы на услуги')
+                                        .form-group
+                                            .form-group-zag Продакшн
+                                            .form-group-items
+                                                +inputText('Стоимость услуги', 'Например: 1000 BYN')
+                                                +addDocument33('Тарифы на услуги')
+                                        .form-group
+                                            .form-group-zag Аренда площаки
+                                            .form-group-items
+                                                +inputText('Стоимость услуги', 'Например: 900 BYN')
+                                                +addDocument33('Тарифы на услуги')
+                                        .form-group
+                                            .form-group-zag Отели
+                                            .form-group-items
+                                                +inputText('Стоимость услуги', 'Например: 900 BYN')
+                                                +addDocument33('Тарифы на услуги')
+                                        .form-group
+                                            .form-group-zag Грузоперевозки
+                                            .form-group-items
+                                                +inputText('Стоимость услуги', 'Например: 900 BYN')
+                                                +addDocument33('Тарифы на услуги')
+                                        .form-group
+                                            .form-group-zag Транспорт
+                                            .form-group-items                         
+                                                +inputText('Стоимость услуги', 'Например: 900 BYN')
+                                                +addDocument33('Тарифы на услуги')
+                                        .border 
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items   
+                                            +select-mult66Req('Какую информацию хотите получать')
+                                    .border 
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items 
+                                            +select-mult66Req('Регионы в которых хотите работать')
+                                    .border 
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items
+                                            +addDocument('Тарифы на услуги')
+                                    +btnBlue('Сохранить данные')
+                                    .lc-tab-head
+                                        .lc-tab-zag Данные о компании
+                                            +tooltip()
+                                        +btnAdd('Добавить новую компанию')
+                                    .row.--photo
+                                        +addPhoto()
+                                        .lc-info(data-aos="fade-right")
+                                            .row 
+                                                +selectReq('Страна', 'Беларусь')
+                                                +inputTextReq('Наименование', 'Например: Кока Кола')
+                                            .row 
+                                                +selectReq('Тип лица', 'Юридическое лицо')
+                                                +selectReq('Форма собственности', 'ИП')
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items 
+                                            +inputTextReq('Директор компании', 'Например: Самцов Валентин Игоревич')
+                                            +inputTextReq('Представитель компании', 'Например: Кузнецов Григорий Евгеньевич')
+                                            +inputTelReq()
+                                            +inputTextReq('Адрес регистрации', 'Например: пр-т Независимости, 39')
+                                            +inputTextReq('Почтовый адрес', 'Например: пр-т Независимости, 39')
+                                            +inputTextReq('Номер свидетельства о регистрации', 'Например: №3689 ')
+                                            +inputDateReq('Дата свидетельства о регистрации')
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-zag Налоговая информация
+                                        .form-group-items 
+                                            +inputTextReq('ОГРНИП', 'С ГГ КК ХХХХХХХХХ Ч')
+                                            +inputTextReq('ИНН', 'Например: 569847889')
+                                            +inputTextReq('КПП', 'Например: 569847889')
+                                            +inputTextReq('ОКПО', 'Например: 36356869')
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-zag Банковская информация
+                                        .form-group-items 
+                                            +inputTextReq('Наименование банка', 'Например: Альфа-банк ')
+                                            +inputTextReq('Адрес банка', 'Например: пр-т Независимости 35 ')
+                                            +inputTextReq('Номер счета', 'Например: пр-т Независимости 35 ')
+                                            +selectReq('Валюта счета', 'BYN')
+                                            +inputTextReq('SWIFT', 'AKBBBY2X')
+                                            +inputTextReq('BIC', 'Например: 044525225')
+                                            +inputTextReq('Наименование банка корреспондента', 'Например: Белгазпромбанк ')
+                                            +inputTextReq('BIC код банка корреспондента', 'Например: 044525225 ')
+                                            +inputTextReq('Номер счета банка корреспондента', 'Например: 0835-0902029-13-010')
+                                    .border 
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-zag Копии документов
+                                        .form-group-items
+                                            +addDocument('Копии документов')
+                                    .border
+                                    .form-group(data-aos="fade-down")
+                                        .form-group-items
+                                         +checkTooltip('Отображать профиль другим пользователям')
+                                    .row
+                                        +btnBlue('Сохранить данные')
+                                        +btnBorder('Отменить редактирование')                  
+                        .lc-tab__body-el
+                        .lc-tab__body-el

@@ -1,0 +1,25 @@
+.add-service {
+    &-form {
+        &__zag {
+            font-size: toVw(16);
+            text-transform: uppercase;
+            padding-top: toVw(45);
+        }
+        .form-item.--textarea {
+            margin-bottom: 0;
+        }
+        &__mark {
+            font-size: toVw(12);
+            color:#BFBFBF;
+            width: 66%;
+            line-height: 140%;
+            padding-top: toVw(8);
+            @include sm-block() {
+                width: 100%;
+            }
+        }
+        .btn {
+            margin: toVw(40) 0;
+        }
+    }
+}

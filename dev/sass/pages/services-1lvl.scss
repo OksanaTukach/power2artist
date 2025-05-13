@@ -1,0 +1,208 @@
+
+.services--first-lvl {
+    margin-top: toVw(45);
+    .services-menu {
+        margin-bottom: toVw(100);
+        display: flex;
+        flex-wrap: wrap;
+        @include md-block(){
+            justify-content: space-between;
+        }
+        @include xxs-block(){
+            margin-bottom: toVw(30);
+        }
+        margin-right: toVw(-26);
+        margin-left: toVw(-26);
+        @include sm-block(){
+            margin-right: toVw(-10);
+            margin-left: toVw(-10);
+        }
+        @include xs-block(){
+            margin-right: 0;
+            margin-left: 0;
+        }
+        &-item {
+            width: calc((100% - 8.125vw) / 3);
+            margin-right: toVw(26);
+            margin-left: toVw(26);
+            position: relative;
+            background-color: $blue;
+            margin-bottom: toVw(53);
+            border: 1px solid $blue;
+            border-radius: 25px;
+            @include md-block(){
+                width: calc((100% - 7.37vw) / 2);
+            }
+            @include sm-block(){
+                width: calc((100% - 5vw) / 2);
+                margin-right: toVw(10);
+                margin-left: toVw(10);
+                margin-bottom: toVw(20);
+            }
+            @include xs-block(){
+                width: 100%;
+                margin-bottom: toVw(20);
+                margin-right: 0;
+                margin-left: 0;
+            }
+            transition: .3s;
+            &:hover {
+                background-color: white;
+                a {
+                    color: $blue;
+                }
+            }
+            a {
+                padding: toVw(55) 0;
+                width: 100%;
+                font-weight: bold;
+                font-size: toVw(28);
+                line-height: 130%;
+                letter-spacing: 0.01em;
+                text-transform: uppercase;
+                color: #FFFFFF;
+                transition: .3s;
+                text-align: center;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include sm-block(){
+                    padding: toVw(50) 0;
+                }
+            }
+            .dropdown-zag {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border:1px solid $blue;
+                height: 100%;
+                
+                
+                span {
+                    font-weight: bold;
+                    font-size: toVw(18);
+                    color: #424242;
+                }
+                .icon {
+                    transition: .3s;
+                    width: toVw(8);
+                    height: toVw(8);
+                }
+                a {
+                    padding: toVw(25);
+                    &.link {
+                        width: calc(100% - 3.125vw);
+                        transition: .5s;
+                        span {
+                            transition: .3s ease-in-out;
+                        }
+                        &:hover {
+                            span {
+                                color: $blue;
+                            }
+                            
+                        }
+                    }
+                    &.dropdown-btn {
+                        width: toVwVal(60px);
+                        .icon {
+                            transition: .3s ease-in-out;
+                        }
+                        &:hover {
+                            .icon {
+                                fill: $blue;
+                            }
+                        }
+                    }
+                }
+            }
+            .drop {
+                display: none;
+                position: absolute;
+                width: 100%;
+                z-index: 5;
+                border: 1px solid $blue ;
+                border-top: none;
+                max-height: toVw(250);
+                overflow-y: auto;
+                li {
+                    background-color: #F1FCFF;
+                    border-top: 1px solid #BBEEF9;
+                    a {
+                       padding: toVw(15) toVw(20); 
+                       font-size: toVw(14);
+                       color: $black;
+                       width: 100%;
+                    }
+                    &:hover {
+                        background-color: rgb(255, 255, 255);
+                        a {
+                            color: $blue;
+                        }
+                    }
+                }
+            }
+            &.open {
+                .dropdown-zag {
+                    .icon {
+                        transform: rotate(180deg);
+                        fill: $blue;
+                    }
+                }
+                .drop {
+                    display: block;
+                }
+            }
+            // .services-dropdown {
+
+            // }
+        }
+    }
+    .services-text {
+       
+        margin: auto;
+        background-color: $blue;
+        padding: toVw(45) toVw(35) toVw(55) toVw(55);
+        width: toVw(730);
+        @include sm-block(){
+            width: 100%;
+        }
+        @include xxs-block(){
+            padding: toVw(15);
+            text-align: center;
+        }
+        &--zag {
+            font-weight: bold;
+            font-size: toVw(20);
+            color: #FFFFFF;
+            margin-bottom: toVw(25);
+        }
+        .btn {
+            @include xxs-block(){
+                margin: auto;
+            }
+        }
+        ul {
+            margin-bottom: toVw(25);
+            li {
+                text-align: left;
+                position: relative;
+                padding-left: toVw(20);
+                font-size: toVw(16);
+                color: #FFFFFF;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: toVw(8);
+                    height: toVw(8);
+                    border-radius: 50%;
+                    background-color: white;
+                    left: 0;
+                    top: toVw(9); 
+                }
+            }
+        }
+
+    }
+}

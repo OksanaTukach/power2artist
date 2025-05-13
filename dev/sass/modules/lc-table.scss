@@ -1,0 +1,267 @@
+
+.lc-table {
+    padding-top: toVw(30);
+    width: 100%;
+    @include sm-block(){
+        overflow: auto;
+        max-width: 100%;
+    }
+    &__zag {
+        width: 100%;
+        background-color: #F2FDFF;
+        padding: toVw(30) toVw(55);
+        border: 1px solid #E5EBEC;
+        border-bottom: none;
+        font-size: toVw(28);
+        font-weight: bold;
+        @include sm-block(){
+            width: toVw(870);
+            margin-left: 20px;
+            padding: toVw(30) toVw(15);
+        }
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        @include sm-block(){
+            width: toVw(870);
+            margin-left: 20px;
+        }
+        .lc-table__name-label {
+            font-size: toVw(9);
+            color: white;
+            background-color: $blue;
+            padding: toVw(4) toVw(6);
+            line-height: normal;
+            margin-left: toVw(10);
+        }
+        .table-head {
+            background: #E7FBFF;
+            th {
+                text-align: left;
+                font-size: toVw(15);
+                font-weight: bold;
+                padding: toVw(18) 0;
+                &:first-child {
+                    padding-left: toVw(55);
+                    @include sm-block(){
+                        padding-left: toVw(15);
+                    }
+                }
+                @include sm-block(){
+                    font-size: toVw(14);
+                }
+                
+            }
+        }
+        tr {
+            border: 1px solid #E5EBEC;
+            border-top: none;
+            span {
+                font-size: toVw(15);
+                @include sm-block(){
+                    font-size: toVw(14);
+                }
+            }
+            a {
+                //margin: 0 toVw(5);
+                color: $blue;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            p {
+                font-size: toVw(15);
+                @include sm-block(){
+                    font-size: toVw(14);
+                }
+            }
+            td {
+                padding: toVw(18) toVw(5);
+                .name {
+                    display: flex;
+                    align-items: baseline;
+                }
+                &:first-child {
+                    padding-left: toVw(55);
+                    @include sm-block(){
+                        padding-left: toVw(15);
+                    }
+                }
+                .icon.icon-trash,
+                .icon.icon-archive{
+                    fill: #3DC4E1;
+                    width: toVw(22);
+                    height: toVw(25);
+                }
+                .icon.icon-clock {
+                    width: toVw(14);
+                    height: toVw(14);
+                    fill: #373737;
+                    margin-right: toVw(10);
+                    margin-top: toVw(4);
+                    transform: translateY(2px);
+                }
+                .icon.icon-cancel {
+                    width: toVw(14);
+                    height: toVw(14);
+                    fill: #9CDDEB;
+                    margin-right: toVw(10);
+                    margin-top: toVw(4);
+                    transform: translateY(2px);
+                }
+                .icon.icon-check {
+                    width: toVw(14);
+                    height: toVw(14);
+                    fill: $blue;
+                    margin-right: toVw(10);
+                    margin-top: toVw(4);
+                    transform: translateY(2px);
+                }
+                .icon.icon-hammer {
+                    width: toVw(14);
+                    height: toVw(14);
+                    fill:  #9CDDEB;
+                    margin-right: toVw(10);
+                    margin-top: toVw(4);
+                    transform: translateY(2px);
+                }
+            }
+        }  
+        .green-step {
+            td:first-child {
+                position: relative;
+                &::before {
+                    content: '';
+                    background-image: url(../img/svg/out-of-time.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    left: toVw(-12);
+                    padding: toVw(2) toVw(6);
+                    border-radius: 50%;
+                    line-height: normal;
+                    width: toVw(24);
+                    height: toVw(24);
+                    background-color: #17BF28;
+                    z-index: 5;
+
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    width: 1px;
+                    top: 0;
+                    left: 0;
+                    background-color: #17BF28;
+                }
+            }
+        }
+        .yel-step {
+            td:first-child {
+                position: relative;
+                &::before {
+                    content: '';
+                    background-image: url(../img/svg/out-of-time.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    left: toVw(-12);
+                    padding: toVw(2) toVw(6);
+                    border-radius: 50%;
+                    line-height: normal;
+                    width: toVw(24);
+                    height: toVw(24);
+                    background-color: #FFA621;
+                    z-index: 5;
+
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    width: 1px;
+                    top: 0;
+                    left: 0;
+                    background-color: #FFA621;
+                }
+            }
+        }
+        .red-step {
+            td:first-child {
+                position: relative;
+                &::before {
+                    content: '';
+                    background-image: url(../img/svg/out-of-time.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    left: toVw(-12);
+                    padding: toVw(2) toVw(6);
+                    border-radius: 50%;
+                    line-height: normal;
+                    width: toVw(24);
+                    height: toVw(24);
+                    background-color: #FF0000;
+                    z-index: 5;
+
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    width: 1px;
+                    top: 0;
+                    left: 0;
+                    background-color: #FF0000;
+                }
+            }   
+        }
+        .attention {
+            background-color: rgba(242, 253, 255, 0.5);
+            td:first-child {
+                position: relative;
+                &::before {
+                    content: '';
+                    background-image: url(../img/svg/attention.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    left: toVw(-12);
+                    border-radius: 50%;
+                    line-height: normal;
+                    width: toVw(24);
+                    height: toVw(24);
+                    background-color: $blue;
+                    z-index: 5;
+
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    width: 1px;
+                    top: 0;
+                    left: 0;
+                    background-color: $blue;
+                }
+            }   
+        }
+        .rejected {
+            td.status  {
+                color: #9CDDEB;
+            }
+        }
+        .approved {
+            td.status  {
+                color: $blue;
+            }
+        }
+        .finished {
+            td.status  {
+                color: #9CDDEB;
+            }
+        }
+    }
+}

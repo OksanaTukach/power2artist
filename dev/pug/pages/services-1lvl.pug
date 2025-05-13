@@ -1,0 +1,47 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Услуги первого уровня';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./js/fv.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1 Маркетинг
+        .services.services--first-lvl
+            .container
+                .services-menu
+                    .services-menu-item
+                        a(href="#") Рекламное агенство
+                    .services-menu-item
+                        a(href="#") Реклама на ТВ
+                    .services-menu-item
+                        a(href="#") Радио
+                    .services-menu-item
+                        a(href="#") Разработка материалов
+                    .services-menu-item
+                        a(href="#") Интернет 
+                    .services-menu-item
+                        a(href="#") PR
+                    .services-menu-item
+                        a(href="#") Рекламное агенство
+                    .services-menu-item
+                        a(href="#") Реклама на ТВ
+                    .services-menu-item
+                        a(href="#") Радио
+                    .services-menu-item
+                        a(href="#") Разработка материалов
+                    .services-menu-item
+                        a(href="#") Интернет 
+                    .services-menu-item
+                        a(href="#") PR

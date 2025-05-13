@@ -1,0 +1,24 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная';
+
+block libs-css
+	link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+block libs-js
+	script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+	script(src="./js/fv.js")
+	script(src="./js/mp.js")
+
+block content
+	include ../modules/header
+	include ../modules/sidebar
+	main
+		.main-container
+			.main
+				include ../modules/main-form/artist
+				include ../modules/main-form/company
+				include ../modules/main-form/staff
+
+	include ../modules/footer
+		

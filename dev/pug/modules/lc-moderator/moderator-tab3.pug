@@ -1,0 +1,21 @@
+.lc-tab.js-lc-tab 
+    .lc-tab__head.js-lc-tab__head.-center
+        a.lc-tab__head-el.js-lc-tab-el.active(data-tab='3-1')
+            span Все аукционы
+            span.lc-num 18
+        a.lc-tab__head-el.js-lc-tab-el(data-tab='3-2')
+            span Участи в аукционах
+            span.lc-num 68
+        a.lc-tab__head-el.js-lc-tab-el(data-tab='3-3')
+            span Создание аукционов
+            span.lc-num 101
+    .lc-tab__body.js-lc-tab__body
+        .lc-tab__body-el.js-lc-tab-el.active(data-tab='3-1')
+            include ./moderator-tab3-1
+            include ../pagination
+        .lc-tab__body-el.js-lc-tab-el(data-tab='3-2')
+            include ./moderator-tab3-2
+            include ../pagination
+        .lc-tab__body-el.js-lc-tab-el(data-tab='3-3')
+            include ./moderator-tab3-3
+            include ../pagination

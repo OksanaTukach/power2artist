@@ -1,0 +1,80 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Услуги второго уровня';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./js/fv.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1 Интернет
+        .services.services__second-lvl
+            .container
+                .services-menu
+                    .services-menu-item
+                        .services-item__main Реклама в соц. сетях
+                        .services-item-btn__items
+                            .btn-item
+                                a(href="#") Оставить заявку
+                            .btn-item
+                                a(href="#") Создать лот
+                    .services-menu-item
+                        .services-item__main Реклама у блогеров
+                        .services-item-btn__items
+                            .btn-item
+                                a(href="#") Оставить заявку
+                            .btn-item
+                                a(href="#") Создать лот
+                    .services-menu-item
+                        .services-item__main Создание роликов Youtube
+                        .services-item-btn__items
+                            .btn-item
+                                a(href="#") Оставить заявку
+                            .btn-item
+                                a(href="#") Создать лот
+                    .services-menu-item
+                        .services-item__main Создание групп
+                        .services-item-btn__items
+                            .btn-item
+                                a(href="#") Оставить заявку
+                            .btn-item
+                                a(href="#") Создать лот
+                    .services-menu-item
+                        .services-item__main Создание ботов
+                        .services-item-btn__items
+                            .btn-item
+                                a(href="#") Оставить заявку
+                            .btn-item
+                                a(href="#") Создать лот
+                    .services-menu-item
+                        .services-item__main Наружная реклама
+                        .services-item-btn__items
+                            .btn-item
+                                a(href="#") Оставить заявку
+                            .btn-item
+                                a(href="#") Создать лот
+                    .services-menu-item
+                        .services-item__main Разработка материалов
+                        .services-item-btn__items
+                            .btn-item
+                                a(href="#") Оставить заявку
+                            .btn-item
+                                a(href="#") Создать лот
+                    .services-menu-item
+                        .services-item__main Контекстная реклама
+                        .services-item-btn__items
+                            .btn-item
+                                a(href="#") Оставить заявку
+                            .btn-item
+                                a(href="#") Создать лот
+    

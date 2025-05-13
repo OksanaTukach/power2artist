@@ -1,0 +1,84 @@
+.lc-header
+    form.filter
+        +select('Тип лица', 'Физическое лицо') 
+        +select('Категория пользователя', 'Артист') 
+        +inputDateRange('Дата')
+        +select('Статус', 'В обработке') 
+        .lc-search 
+            input(type="text" placeholder="Поиск уведомления")
+            .lc-search__icon 
+                +icon('search')
+        a(href="#").clear-filter Очистить фильтр
+.lc-content 
+    .lc-table 
+        .lc-table__zag Заявки на регистрацию
+        table
+            tbody 
+                tr.table-head
+                    th ФИО или название организации
+                    th Тип лица
+                    th Категория пользователя
+                    th Дата заявки
+                    th Статус
+
+                tr.red-step.processing   
+                    td
+                        span Лазуркина Ирина Васильевна
+                            span.lc-table__name-label Новое
+                    td
+                        span Физическое лицо
+                    td
+                        span Артист
+                    td
+                        span 12.09.2020
+                    td.status 
+                        +icon('clock')
+                        span В обработке
+                tr.rejected
+                    td
+                        span Общество с ограниченной ответственностью «Медиа»
+                    td
+                        span Юридическое лицо
+                    td
+                        span Компания
+                    td
+                        span 12.09.2020
+                    td.status  
+                        +icon('cancel')
+                        span Отклонено
+                tr.green-step.processing 
+                    td
+                        span Ярмолинский Вячеслав Валерьевич
+                    td
+                        span Физическое лицо
+                    td
+                        span Персонал
+                    td
+                        span 12.09.2020
+                    td.status  
+                        +icon('clock')
+                        span В обработке
+                tr.yel-step.processing 
+                    td
+                        span Григорик Анна Николаевна
+                    td
+                        span Физическое лицо
+                    td
+                        span Артист
+                    td
+                        span 12.09.2020
+                    td.status  
+                        +icon('clock')
+                        span В обработке
+                tr.rejected  
+                    td
+                        span Унитарное городское предприятие «Мьюзик»
+                    td
+                        span Юридическое лицо
+                    td
+                        span Компания
+                    td
+                        span 12.09.2020
+                    td.status 
+                        +icon('cancel')
+                        span Отклонено

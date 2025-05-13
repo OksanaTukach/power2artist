@@ -1,0 +1,190 @@
+.offer, .request{
+    margin-top: toVw(45);
+    &-container {
+        max-width: 1150px;
+        margin-right: auto;
+    }
+    &-info {
+        display: flex;
+        justify-content: space-between;
+        @include sm-block(){
+            flex-wrap: wrap;
+        }
+    }
+    &-img {
+        width: 30%;
+        background-color: #E8F2F4;
+        padding: toVw(22) 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include sm-block(){
+           width: 50%;
+           margin: auto;
+        }
+        @include xxs-block {
+            width: 100%;
+        }
+        img {
+            border-radius: 50%;
+        }
+    }
+    &-desc {
+        width: 66%;
+        @include sm-block(){
+            width: 100%;
+         }
+        .zag {
+            font-weight: bold;
+            font-size: toVw(20);
+            color: $black;
+            margin-bottom: toVw(15);
+        }
+        .text {
+            font-size: toVw(14);
+            color: $black;
+        }
+        .info {
+            margin-top: toVw(15);
+            display: flex;
+            flex-wrap: wrap;
+            @include xxs-block {
+                display: block;
+            }
+            .item {
+                display: flex;
+                @include xxs-block {
+                    display: block;
+                    margin-bottom: toVw(20);
+                }
+                .zag {
+                    font-weight: normal;
+                    font-size: toVw(14);
+                    color: $black;
+                    margin-bottom: 0;
+                }
+                .val {
+                    font-weight: bold;
+                    font-size: toVw(14);
+                    color: $black;
+                    margin-left: 8px;
+                }
+                &:nth-child(odd) {
+                    margin-right: toVw(85);
+                }
+            }
+        }
+    }
+    &-form {
+        margin-top: toVw(35);
+        .select-mult {
+            align-items: center;
+        }
+        &-zag {
+            font-size: toVw(16);
+            
+            color: $black;
+        }
+    }
+}
+.form-item.w100 {
+    width: 100%;
+}
+.form-item.w66 {
+    //width: calc((100% - 1.1vw) / 1.5);
+    width: calc(66.66% - ((2.08333vw / 3) * 1));
+    //margin-right: 0;
+    @include sm-block(){
+        width: 100%;
+        //margin-right: 0;
+    }
+    //@include xxs-block(){
+        //margin-right: 0;
+    //}
+    .chosen-container{
+        width: 100%!important;
+        
+        .chosen-choices {
+            padding: toVw(22) toVw(10);
+            background: none;
+            cursor: pointer;
+        }
+    }
+    &.select-mult {
+        //margin-right: toVw(40);
+        @include sm-block(){
+            margin-right: 0;
+        }
+    }
+}
+.form-item.w75{
+    width: calc(75% - ((2.08333vw / 4) * 1));
+    @include sm-block(){
+        width: 100%;
+    }
+
+}
+.form-item.w50{
+    width: calc(50% - ((2.08333vw / 2) * 1));
+    @include xxs-block {
+        width: 100%;
+    }
+}
+.form-item.w25{
+    width: calc(25% - ((2.08333vw / 4) * 3));
+    @include sm-block(){
+        width: calc(50% - ((2.08333vw / 2) * 1));
+    }
+    @include xxs-block {
+        width: 100%;
+    }
+}
+.multiple-select {
+    width: 100%!important;
+    border: none;
+    input {
+        visibility: hidden;
+    }
+    li.selected {
+        background-color: $lightBlue;
+    }
+    button {
+        padding: toVw(18) toVw(10) toVw(18) toVw(21);
+        height: toVw(65);
+        top: toVw(22);
+        border: none;
+        background: none;
+        span {
+            position: static;
+        }
+        .icon-caret {
+            border: none;
+            width: toVw(32);
+            height: toVw(25);
+            top: toVw(23);
+            right: toVw(3);
+            transition: .3s ease;
+            &::before {
+                content: '';
+                width: toVw(32);
+                height: toVw(25);
+                background-image: url(../img/content/arrow-input.png);
+                position: absolute;
+                left: 1px;
+                top: 1px;
+                background-repeat: no-repeat;
+                background-position: center;
+                transition: .3s ease-in-out;
+            }
+
+
+            &.open {
+                &::before {
+                    transform: rotateX(180deg);
+                }
+
+            }
+
+        }
+    }
+}

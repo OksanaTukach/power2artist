@@ -1,0 +1,89 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Создание аукциона';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./libs/jquery.datepicker.extension.range.min.js")
+    script(src="./libs/multiple-select.js")
+    script(src="./js/fv.js")
+    script(src="./js/form.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1= title
+        .request 
+            .container 
+                .form-container 
+                    form.request-form
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Общие сведения
+                            .form-group-items
+                                .row
+                                    +inputDateReq('Дата', '28.10.2020')
+                                    +inputDateRangeReq('Период', '28.10.2020')  
+                                .row 
+                                    +selectReq('Страна', 'Беларусь')
+                                    +selectReq('Регион', 'Гомельская область')
+                                    +selectReq('Город', 'Гомель')
+                                +selectReq('Вид услуги', 'Сцена')
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Оплата
+                            .form-group-items
+                                +selectReq('Условия по оплате', '50% при подписании контракта ')
+                                +selectReq('Задаток', 'Да')
+                                +selectReq('Размер задатка', '50%')
+                        .border
+                        .form-group(data-aos="fade-down")
+                            .form-group-items
+                                +textarea100('Дополнительная информация об услуге', 'Введите дополнительную информацию о концерте')
+                        .border
+                        .form-group(data-aos="fade-down")
+                            .form-group__item-zag Портфолио
+                            .form-group-items
+                                +addDocument('Портфолио')
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Правила торгов
+                            .form-group-items 
+                                +selectReq('Тип торгов', 'На повышение')
+                                +inputTextReq('Начальная цена лота', '100')
+                                +selectReq('Валюта торгов', 'USD')
+                                +selectReq('Вид шага торгов', 'В процентах')
+                                +inputTextReq('Шаг торгов', '5%')
+                        .form-group(data-aos="fade-down")
+                            .form-group-zag Порядок проведения аукционов
+                            .form-group__item-zag Прием заявок
+                            .form-group-items
+                                .row
+                                    +inputDateReq('Дата начала приема заявок', '28.10.2020')
+                                    +inputDateReq('Дата окончания приема заявок', '28.10.2020')
+                                .row
+                                    +inputTimeReq('Время начала приема заявок')
+                                    +inputTimeReq('Время окончания приема заявок')
+                            .border
+                            .form-group__item-zag Аукцион
+                            .form-group-items
+                                .row
+                                    +inputDateReq('Дата начала аукциона', '28.10.2020')
+                                    +inputDateReq('Дата окончания аукциона', '28.10.2020')
+                                .row
+                                    +inputTimeReq('Время начала торгов')
+                                    +inputTimeReq('Время окончания торгов')
+                            .border
+                        .form-group(data-aos="fade-down")
+                            .form-group__item-zag Копии документов
+                            .form-group-items
+                                +addDocument('Копии документов')
+                        +btnBlue('Отправить на модерацию')

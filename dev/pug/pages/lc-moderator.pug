@@ -1,0 +1,69 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Личный кабинет модератора';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/multiple-select.min.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./libs/jquery.datepicker.extension.range.min.js")
+    script(src="./libs/multiple-select.js")
+    script(src="./js/fv.js")
+    script(src="./js/form.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1= title
+        .lc
+            .container
+                .lc-notify  
+                    .lc-notify__close
+                        span.close-icon
+                    .lc-notify__title Уведомление
+                    .lc-notify__text Заявка
+                        a(href="#") &#8194;256856 
+                        |&#8194;уже перешла в 
+                        span.red красную 
+                        |&#8194;зону!
+                .lc-tab.js-lc-tab 
+                    .lc-tab__head.js-lc-tab__head
+                        a.lc-tab__head-el.js-lc-tab-el.active
+                            span Все уведомления
+                            span.lc-num 18
+                        a.lc-tab__head-el.js-lc-tab-el
+                            span Заявки на регистрацию
+                            span.lc-num 68
+                        a.lc-tab__head-el.js-lc-tab-el
+                            span Заявки на аукционы
+                            span.lc-num 101
+                        a.lc-tab__head-el.js-lc-tab-el
+                            span Заявки на оказание услуг
+                            span.lc-num 34
+                        a.lc-tab__head-el.js-lc-tab-el
+                            span Добавление новой категории
+                            span.lc-num 18
+                    .lc-tab__body.js-lc-tab__body
+                        .lc-tab__body-el.js-lc-tab-el.active
+                            include ../modules/lc-moderator/moderator-tab1
+                            include ../modules/pagination
+                        .lc-tab__body-el.js-lc-tab-el
+                            include ../modules/lc-moderator/moderator-tab2
+                            include ../modules/pagination
+                        .lc-tab__body-el.js-lc-tab-el
+                            include ../modules/lc-moderator/moderator-tab3
+                        .lc-tab__body-el.js-lc-tab-el
+                            include ../modules/lc-moderator/moderator-tab4
+                        .lc-tab__body-el.js-lc-tab-el
+                            include ../modules/lc-moderator/moderator-tab5
+                            include ../modules/pagination
+                                    

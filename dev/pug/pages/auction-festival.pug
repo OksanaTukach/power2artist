@@ -1,0 +1,342 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Аукцион';
+
+block libs-css
+    link(rel="stylesheet" type='text/css' href="./libs/jquery.mCustomScrollbar.css")
+    link(rel="stylesheet" type='text/css' href="./libs/jquery-ui-1.9.2.custom.min.css")
+    link(rel="stylesheet" type='text/css' href="./libs/flipclock.css")
+block libs-js
+    script(src="./libs/jquery.mCustomScrollbar.concat.min.js")
+    script(src="./libs/jquery-ui-1.9.2.custom.min.js")
+    script(src="./libs/flipclock.min.js")
+    script(src="./js/fv.js")
+    script(src="./js/auction-card.js")
+    script(src="./js/timer.js")
+
+block content
+    include ../modules/header
+    include ../modules/sidebar
+    main
+        .page-head
+            .container
+                .page-head__wrp
+                    include ../modules/breadcrumbs
+                    h1.favorites Аукцион на концерт Beyonce
+                        button.btn-favorites
+                            +icon('star')
+        .container
+            .card   
+                .card-main(data-aos="fade-right") 
+                    .card-main__lot Лот: 569874
+                    .auction-gallery
+                        .auction-gallery__main.js-gallery__main
+                            .auction-gallery__main-slide
+                                a(href='./img/content/auction.png' style='background-image: url(./img/content/auction.png)')
+                            .auction-gallery__main-slide
+                                a(href='./img/content/auction.png' style='background-image: url(./img/content/auction.png)')
+                            .auction-gallery__main-slide
+                                a(href='./img/content/auction.png' style='background-image: url(./img/content/auction.png)')
+                            .auction-gallery__main-slide
+                                a(href='./img/content/auction.png' style='background-image: url(./img/content/auction.png)')
+                        .auction-gallery__nav.js-gallery__nav
+                            .auction-gallery__nav-slide
+                                .img(style='background-image: url(./img/content/auction2.png)')
+                            .auction-gallery__nav-slide
+                                .img(style='background-image: url(./img/content/auction3.png)')
+                            .auction-gallery__nav-slide
+                                .img(style='background-image: url(./img/content/auction4.png)')
+                            .auction-gallery__nav-slide
+                                .img(style='background-image: url(./img/content/auction.png)')
+                    .card-main__content
+                        .content-zag Основная информация о лоте:
+                        .card-list 
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Сведения о концерте
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Тип концерта
+                                        .val Фестиваль
+                                    .card-list__item-content 
+                                        .zag Дата
+                                        .val 25.03.2020
+                                    .card-list__item-content 
+                                        .zag Период
+                                        .val с 10 до 21
+                                    .card-list__item-content 
+                                        .zag Страна
+                                        .val Беларусь
+                                    .card-list__item-content 
+                                        .zag Регион
+                                        .val Минская область
+                                    .card-list__item-content 
+                                        .zag Город
+                                        .val Минск
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Оплата
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Условия по оплате
+                                        .val 30% при подписании договора
+                                    .card-list__item-content 
+                                        .zag Размер задатка
+                                        .val 50%
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Расходы
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Расходы на стороне промоутера
+                                        .val Сцена
+                                    .card-list__item-content 
+                                        .zag Расходы на стороне артиста
+                                        .val Визы
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Дополнительная информация о концерте
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .val Конце́рт — музыкальное произведение, чаще всего для одного или нескольких солирующих инструментов с оркестром. Существуют также концерты для одного инструмента — без оркестра, концерты для оркестра — без строго определённых сольных партий, концерты для голоса (или голосов) с оркестром и концерты для хора.
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Информация об организаторе
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-content 
+                                        .zag Название компании/имя
+                                        .val Media
+                                    .card-list__item-content 
+                                        .zag Сайт компании/артиста
+                                        .val Media.com
+                                    .card-list__item-content 
+                                        .zag Страна
+                                        .val Беларусь
+                                    .card-list__item-content 
+                                        .zag Город
+                                        .val Минск
+                            .card-list__item.js-card-list__item
+                                .card-list__item-name.js-card-list__name 
+                                    span Портфолио
+                                    +icon('arrow-drop')
+                                .card-list__hide.js-content
+                                    .card-list__item-doc 
+                                        .list-doc
+                                            a(href="/" download).documents.w100
+                                                .img 
+                                                    img(src="./img/content/documents.png")
+                                                .name    
+                                                    span.blue Документ
+                                                    span 16.08.2020, pdf, 15 кб
+                                            a(href="/" download).documents.w100
+                                                .img 
+                                                    img(src="./img/content/documents.png")
+                                                .name    
+                                                    span.blue Документ
+                                                    span 16.08.2020, pdf, 15 кб
+                .card-info.__auction(data-aos="fade-left")
+                    .card-info__top 
+                        .card-info__count
+                            +icon('card-info-count')
+                            span
+                                b Количество участников: 
+                                |  20
+                        .card-info__rules
+                            a(href="/" download).documents
+                                +icon('card-info-doc')
+                                span Общие правила аукциона
+                    .card-info__item.border-blue.__timer
+                        .zag До завершения аукциона осталось:
+                        .card-info__timer.js-timer(data-finish='2021-05-25 10:20:15')
+                            .timer_section.js-timer_section(data-type='days')
+                                .num.days_1.js-days_1 0
+                                .num.days_2.js-days_2 0
+                                .timer_section_desc &dcy;&ncy;&iecy;&jcy;
+                            .timer_section.js-timer_section(data-type='hours')
+                                .num.hours_1.js-hours_1 0
+                                .num.hours_2.js-hours_2 0
+                                .timer_section_desc &chcy;&acy;&scy;&ocy;&vcy;
+                            .timer_section.js-timer_section(data-type='minutes')
+                                .num.minutes_1.js-minutes_1 0
+                                .num.minutes_2.js-minutes_2 0
+                                .timer_section_desc &mcy;&icy;&ncy;&ucy;&tcy;
+                            .timer_section.js-timer_section(data-type='seconds')
+                                .num.seconds_1.js-seconds_1 0
+                                .num.seconds_2.js-seconds_2 0
+                                .timer_section_desc &scy;&iecy;&kcy;&ucy;&ncy;&dcy;
+                    .card-info__item.border-blue.w50
+                        .info-zag Тип торгов: 
+                        .info-val повышение
+                    .card-info__item.border-blue.w50
+                        .info-zag Статус: 
+                        .info-val Вы ещё не сделали ставку
+                    .card-info__item.border-blue
+                        .info-zag Ваше имя в торгах: 
+                            span.blue Папаламова Диана Николаевна
+                    .card-info__item 
+                        .info-list 
+                            b Адрес: 
+                            |Витебская обл., г. Орша, ул. Мира, д. 30
+                        .info-list 
+                            b Продавец: 
+                            |Общество с ограниченной ответственностью «Продакш Медиа»
+                        .info-list
+                            b Организатор: 
+                            |Beyonce
+                    .card-info__item.item__auction
+                        .zag Текущая цена
+                        .price-end 700$ 
+                            span.type с учетом НДС
+                        .gray Следующая минимальная ставка  - 710$
+                        .step Шаг аукциона: 
+                            b 10$ от текущей цены
+                            .gray Сумма увеличения текущей цены
+                        .form-auction
+                            .row 
+                                .form-item
+                                    input(type="text" value="710$")
+                                +btnBlue('Сделать ставку')
+                            .form-auction__zag Разместить автоматическую ставку:
+                            .row 
+                                .form-item
+                                    select.styler
+                                        option 750$
+                                        option 760$
+                                        option 770$
+                                        option 780$
+                                +btnBorder('Автоставка')
+                            .row 
+                                .form-item
+                                    input(type="text" value="710$")
+                                .form-auction__text Текущая автоставка
+                        a(href="#").form-auction__link
+                            +icon('tooltip')
+                            span Что такое "Автоматическая ставка" и как она работает?
+                    .card-info__item.__bargaining 
+                        .zag Ход торгов:
+                        .bargaining-items 
+                            .bargaining-row
+                                .bargaining-row__item Участник 10
+                                .bargaining-row__item
+                                    span 13:12:29
+                                    span 19.05.2020
+                                .bargaining-row__item 790$
+                            .bargaining-row
+                                .bargaining-row__item Участник 9
+                                .bargaining-row__item
+                                    span 13:12:29
+                                    span 19.05.2020
+                                .bargaining-row__item 790$
+                            .bargaining-row
+                                .bargaining-row__item Участник 9
+                                .bargaining-row__item
+                                    span 13:12:29
+                                    span 19.05.2020
+                                .bargaining-row__item 790$
+                            .bargaining-row
+                                .bargaining-row__item Участник 7
+                                .bargaining-row__item
+                                    span 13:12:29
+                                    span 19.05.2020
+                                .bargaining-row__item 790$
+                            .bargaining-row
+                                .bargaining-row__item Диана
+                                .bargaining-row__item
+                                    span 13:12:29
+                                    span 19.05.2020
+                                .bargaining-row__item.blue 790$
+                            .bargaining-row
+                                .bargaining-row__item Участник 5
+                                .bargaining-row__item
+                                    span 13:12:29
+                                    span 19.05.2020
+                                .bargaining-row__item 790$
+                            .bargaining-row
+                                .bargaining-row__item Участник 4
+                                .bargaining-row__item
+                                    span 13:12:29
+                                    span 19.05.2020
+                                .bargaining-row__item 790$
+                            .bargaining-row
+                                .bargaining-row__item Участник 3
+                                .bargaining-row__item
+                                    span 13:12:29
+                                    span 19.05.2020
+                                .bargaining-row__item 790$
+                            .bargaining-row
+                                .bargaining-row__item Участник 2
+                                .bargaining-row__item
+                                    span 13:12:29
+                                    span 19.05.2020
+                                .bargaining-row__item 790$
+                            .bargaining-row
+                                .bargaining-row__item Участник 1
+                                .bargaining-row__item
+                                    span 13:12:29
+                                    span 19.05.2020
+                                .bargaining-row__item 790$
+                            a(href="#") Посмотреть все ставки
+                                
+                .card-auctions
+                    .zag Похожие лоты
+                    .card-auctions__items
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions1.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions2.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности
+                        .card-auctions__item
+                            a(href="#").img
+                                .img-wrp(style="background-image: url('./img/content/auctions3.png')")
+                            .info
+                                .item-zag Аукцион на концерт Beyonce
+                                .item-list 
+                                    .zag Начальная цена лота
+                                    .val.blue.price 700$
+                                .item-list 
+                                    .zag Регион, страна и город:
+                                    .val  
+                                        span Минская обсласть
+                                        span Беларусь
+                                        span Минск
+                                .item-list 
+                                    .zag Тип мероприятия:
+                                    .val Сольный конуцерт
+                                a(href="#").btn.btn-blue Подробности

@@ -1,0 +1,95 @@
+.lc-header
+    form.filter
+        +select('Тип торгов', 'На повышение') 
+        +select('Категория', 'Маркетинг') 
+        +inputDateRange('Дата')
+        +select('Статус', 'В обработке') 
+        .lc-search 
+            input(type="text" placeholder="Поиск уведомления")
+            .lc-search__icon 
+                +icon('search')
+        a(href="#").clear-filter Очистить фильтр
+.lc-content 
+    .lc-table 
+        .lc-table__zag Создание аукционов
+        table
+            tbody 
+                tr.table-head
+                    th Название аукциона
+                    th № заявки
+                    th Тип торгов
+                    th Категория
+                    th Дата заявки
+                    th Статус
+
+                tr.processing
+                    td
+                        span Аукцион на концерт Beyonce 
+                    td
+                        span 3654
+                    td
+                        span На повышение
+                    td
+                        span Маркетинг
+                    td
+                        span 12.09.2020
+                    td.status  
+                        +icon('clock')
+                        span В обработке
+                tr.red-step.rejected  
+                    td
+                        span Аукцион на концерт группы «Linkin Park»
+                    td
+                        span 6589
+                    td
+                        span На повышение
+                    td
+                        span Продюсирование
+                    td
+                        span 12.09.2020
+                    td.status 
+                        +icon('cancel')
+                        span Отклонено
+                tr.approved
+                    td
+                        span Аукцион на сольный концерт Димы Билана
+                    td
+                        span 3654
+                    td
+                        span На повышение
+                    td
+                        span Интернет
+                    td
+                        span 12.09.2020
+                    td.status  
+                        +icon('check')
+                        span Одобрено
+                tr.green-step.processing 
+                    td
+                        span Аукцион на концерт LOBODA
+                            span.lc-table__name-label Новое
+                    td
+                        span 3654
+                    td
+                        span На повышение
+                    td
+                        span Маркетинг
+                    td
+                        span 12.09.2020
+                    td.status  
+                        +icon('clock')
+                        span В обработке
+                tr.rejected.yel-step
+                    td
+                        span Аукцион на тур группы Three days Grays
+                    td
+                        span 3654
+                    td
+                        span На повышение
+                    td
+                        span Маркетинг
+                    td
+                        span 12.09.2020
+                    td.status 
+                        +icon('cancel')
+                        span Отклонено

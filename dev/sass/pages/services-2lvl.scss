@@ -1,0 +1,61 @@
+.services.services__second-lvl {
+    margin-top: toVw(45);
+    .services-menu {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: toVw(-22);
+        margin-right: toVw(-22);
+        &-item {
+            margin-right: toVw(22);
+            margin-left: toVw(22);
+            width: calc((100% - 9.2vw) / 4);
+            display: flex;
+            flex-wrap: wrap;
+            border: 2px solid #3DC4E1;
+            margin-bottom: toVw(27);
+            @include md-block(){
+                width: calc((100% - 9.2vw) / 3);
+            }
+            @include sm-block(){
+                width: calc((100% - 11vw) / 2);
+            }
+            @include xxs-block(){
+                width: 100%;
+            }
+            .services-item__main {
+                width: 100%;
+                font-size: toVw(18);
+                padding: toVw(26) toVw(15);
+                text-align: center;
+                font-weight: bold;
+            }
+            .services-item-btn__items {
+                width: 100%;
+                display: flex;
+                .btn-item {
+                    width: 50%;
+                    padding: toVw(10);
+                    border: 2px solid #BBEEF9;
+                    background-color: #F1FCFF;
+                    a {
+                        color: white;
+                        background-color: $blue;
+                        border: 1px solid $blue;
+                        padding: toVw(10) 0;
+                        width: 100%;  
+                        text-align: center;
+                        transition: .4s;
+                        &:hover {
+                            background-color: #F1FCFF;
+                            color: $blue;
+                        }
+                        
+                    }
+                   
+
+                }
+                
+            }
+        }
+    }
+}

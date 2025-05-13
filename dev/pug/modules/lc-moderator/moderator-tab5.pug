@@ -1,0 +1,94 @@
+.lc-header
+    form.filter
+        +select('Тип заявки', 'Купить услугу') 
+        +select('Страна', 'Минск') 
+        +inputDateRange('Дата')
+        +select('Статус', 'В обработке') 
+        .lc-search 
+            input(type="text" placeholder="Поиск заявки")
+            .lc-search__icon 
+                +icon('search')
+        a(href="#").clear-filter Очистить фильтр
+.lc-content 
+    .lc-table 
+        .lc-table__zag Добавление новой категории
+        table
+            tbody 
+                tr.table-head
+                    th Название категории
+                    th № заявки
+                    th Тип заявки
+                    th Страна
+                    th Дата
+                    th Статус
+
+                tr.processing.red-step
+                    td
+                        span Музыкальный лейбл
+                    td
+                        span 3654
+                    td
+                        span Купить услугу
+                    td
+                        span Беларусь
+                    td
+                        span 12.09.2020
+                    td.status  
+                        +icon('clock')
+                        span В обработке
+                tr.rejected
+                    td
+                        span Продюссирование
+                    td
+                        span 6589
+                    td
+                        span Купить услугу
+                    td
+                        span Россия
+                    td
+                        span 12.09.2020
+                    td.status 
+                        +icon('cancel')
+                        span Отклонено
+                tr.approved.green-step
+                    td
+                        span Грузоперевозки
+                    td
+                        span 3654
+                    td
+                        span Купить услугу
+                    td
+                        span Беларусь
+                    td
+                        span 12.09.2020
+                    td.status  
+                        +icon('check')
+                        span Одобрено
+                tr.yel-step.processing 
+                    td
+                        span Организация работы
+                    td
+                        span 3654
+                    td
+                        span Купить услугу
+                    td
+                        span Россия
+                    td
+                        span 12.09.2020
+                    td.status  
+                        +icon('clock')
+                        span В обработке
+                tr.rejected
+                    td
+                        span Аренда площадки
+                    td
+                        span 3654
+                    td
+                        span Купить услугу
+                    td
+                        span Беларусь
+                    td
+                        span 12.09.2020
+                    td.status 
+                        +icon('cancel')
+                        span Отклонено

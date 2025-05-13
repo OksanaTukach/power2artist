@@ -1,0 +1,11 @@
+.main-item.js-main-item
+    .main-item-container.js-main-item-container
+        .main-item--close.js-main-item--close
+            span.close-icon
+        h2.main-item--zag.js-main-item--zag Персонал
+        form.main-form.js-main-form
+            +inputText("ФИО", "Например: Beyonce")
+            +selectReq("Введите Вашу страну","Беларусь")
+            +selectReq("Введите Вашу город","Минск")
+            +inputEmail("Введите Ваш Email", "Например: Beyonce@mail.ru")
+            +btnArrow("Получить доступ")
